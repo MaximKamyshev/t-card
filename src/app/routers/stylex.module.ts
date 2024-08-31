@@ -4,6 +4,6 @@ export const styles = stylex.create({
   wrapper: {
     background: 'white',
     padding: '0 0 92.5px 0',
-    width: '100vw',
+    width: '100%',
   }
 })
