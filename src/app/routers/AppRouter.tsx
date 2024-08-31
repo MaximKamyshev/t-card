@@ -7,7 +7,8 @@ import BookmarkLogo from '../../shared/images/for-button-with-subscription/bookm
 import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.svg';
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
 import { Loading } from "../../widgets/loading";
-import { postEvent } from "@telegram-apps/sdk-react";
+import { postEvent } from "@telegram-apps/sdk";
+import { useEffect } from "react";
 
 const navItems = [
   {
@@ -33,7 +34,6 @@ const navItems = [
 ]
 
 export const AppRouter: React.FC = () => {
-  postEvent('web_app_set_background_color', {color: '#FFFFFF'})
   const router = createBrowserRouter([
     {
       path: '/home',
@@ -79,6 +79,9 @@ export const AppRouter: React.FC = () => {
     }
   ]);
 
+  useEffect(() => {
+    postEvent('web_app_set_background_color', {color: '#FFFFFF'})
+  }, [])
   return (
     <>
       <Loading />
