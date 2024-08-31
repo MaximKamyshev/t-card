@@ -28,7 +28,7 @@ export const styles = stylex.create({
   link: {
     fontSize: 15,
     fontWeight: 600,
-    flexFamily: 'Sf-pro-display',
+    fontFamily: 'Sf-pro-display',
     padding: '8px 12px',
     borderRadius: 12,
     margin: '12px 0 0 0',

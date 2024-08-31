@@ -38,7 +38,6 @@ const navItems = [
 export const AppRouter: React.FC = () => {
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   const [swipeBehavior] = initSwipeBehavior()
-  swipeBehavior.disableVerticalSwipe();
   const router = createBrowserRouter([
     {
       path: '/home',
@@ -83,7 +82,7 @@ export const AppRouter: React.FC = () => {
       ),
     }
   ]);
-
+  // swipeBehavior.disableVerticalSwipe();
   return (
     <div {...stylex.props(styles.wrapper)}>
       <Loading />
