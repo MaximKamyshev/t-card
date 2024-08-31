@@ -5,7 +5,7 @@ import BIcon from '../../images/for-suggested-job-card/bIcon.svg';
 import BookmarkIcon from '../../images/for-suggested-job-card/bookmark.svg';
 import PinIcon from '../../images/for-suggested-job-card/pin.svg';
 
-export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ firstColor, secondColor, jobTitle, companyName, isBookmark, salary, city, tags }) => {
+export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ firstColor, secondColor, jobTitle, companyName, salary, city, tags }) => {
   return (
     <article {...stylex.props(styles.card(firstColor))}>
       <div {...stylex.props(styles.flexContainer)}>
