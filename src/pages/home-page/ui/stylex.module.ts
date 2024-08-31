@@ -9,5 +9,8 @@ export const styles = stylex.create({
   },
   container: {
     padding: '0px 20px',
+  },
+  wrapper: {
+    width: '100%',
   }
 })
