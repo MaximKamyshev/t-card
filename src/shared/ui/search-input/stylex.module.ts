@@ -27,6 +27,7 @@ export const styles = stylex.create({
     border: 'none',
     cursor: 'pointer',
     padding: 0,
+    display: 'block',
     transition: 'opacity 0.2s ease-in-out',
     opacity: {
       default: 1,

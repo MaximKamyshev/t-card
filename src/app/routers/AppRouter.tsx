@@ -8,7 +8,6 @@ import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
 import { Loading } from "../../widgets/loading";
 import { postEvent } from "@telegram-apps/sdk";
-import { useEffect } from "react";
 
 const navItems = [
   {

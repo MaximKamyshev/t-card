@@ -12,6 +12,7 @@ export const styles = stylex.create({
     justifyContent: 'center',
   },
   icon: (imageUrl: string) => ({
+    display: 'block',
     width: 22,
     height: 22,
     background: `url("${imageUrl}") center / contain no-repeat`,
