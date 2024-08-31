@@ -2,7 +2,6 @@ import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import React from 'react';
 import { ProfileInfoProps } from './types';
-import bell from '../../../pages/home-page/images/bell.svg';
 
 export const ProfileInfo: React.FC<ProfileInfoProps> = ({ avatar, username }) => {
   return (
