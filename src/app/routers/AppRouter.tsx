@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";
@@ -6,7 +6,6 @@ import HomeLogo from '../../shared/images/for-button-with-subscription/homeLogo.
 import BookmarkLogo from '../../shared/images/for-button-with-subscription/bookmarkLogo.svg';
 import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.svg';
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
-import { Loading } from "../../widgets/loading";
 
 const navItems = [
   {
@@ -69,11 +68,16 @@ export const AppRouter: React.FC = () => {
         </>
       ),
     },
+    {
+      path: '/*',
+      element: (
+        <Navigate to="/home" />
+      ),
+    }
   ]);
 
   return (
     <>
-      <Loading />
       <RouterProvider router={router} />
     </>
   )
