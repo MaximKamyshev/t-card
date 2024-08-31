@@ -9,6 +9,8 @@ import ProfileLogo from '../../shared/images/for-button-with-subscription/profil
 import { Loading } from "../../widgets/loading";
 import { postEvent } from "@telegram-apps/sdk";
 import { initSwipeBehavior } from "@telegram-apps/sdk-react";
+import * as stylex from '@stylexjs/stylex';
+import { styles } from './stylex.module';
 
 const navItems = [
   {
@@ -36,7 +38,7 @@ const navItems = [
 export const AppRouter: React.FC = () => {
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   const [swipeBehavior] = initSwipeBehavior()
-  swipeBehavior.disableVerticalSwipe();
+  // swipeBehavior.disableVerticalSwipe();
   const router = createBrowserRouter([
     {
       path: '/home',
@@ -83,9 +85,9 @@ export const AppRouter: React.FC = () => {
   ]);
 
   return (
-    <>
+    <div {...stylex.props(styles.wrapper)}>
       <Loading />
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }
