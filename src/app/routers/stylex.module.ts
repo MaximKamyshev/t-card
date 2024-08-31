@@ -5,5 +5,6 @@ export const styles = stylex.create({
     background: 'white',
     padding: '0 0 68.5px 0',
     width: '100%',
+    minHeight: '100vh',
   }
 })

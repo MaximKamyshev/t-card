@@ -19,7 +19,7 @@ export const HomePage: React.FC = () => {
     
   })
   return (
-    <div {...stylex.props(styles.wrapper)}>
+    <div>
       <header {...stylex.props(styles.header)}>
         <ProfileInfo avatar={userRows?.photoUrl} username={`${userRows?.firstName} ${userRows?.lastName}`} />
         <CircleButton image={bellIcon} />
