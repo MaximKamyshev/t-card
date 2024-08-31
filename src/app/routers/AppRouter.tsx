@@ -43,9 +43,10 @@ export const AppRouter: React.FC = () => {
     {
       path: '/home',
       element: (
-      <>
-        <HomePage />
-      </>
+        <div {...stylex.props(styles.wrapper)}>
+          <HomePage />
+          <NavBar items={navItems} />
+        </div>
       ),
     },
     {
