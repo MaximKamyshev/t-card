@@ -6,7 +6,7 @@ export const styles = stylex.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     width: '100%',
-    maxWidth: '1000px',
+    maxWidth: '700px',
     position: 'fixed',
     bottom: 0,
     padding: 9,

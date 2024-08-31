@@ -15,6 +15,7 @@ export const styles = stylex.create({
     display: 'block',
     width: 22,
     height: 22,
+    flexShrink: 0,
     background: `url("${imageUrl}") center / contain no-repeat`,
   })
 })
