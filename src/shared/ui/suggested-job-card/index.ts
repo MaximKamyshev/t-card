@@ -1,0 +1,1 @@
+export { SuggestedJobCard } from "./SuggestedJobCard";
