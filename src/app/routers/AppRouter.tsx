@@ -34,6 +34,7 @@ const navItems = [
 ]
 
 export const AppRouter: React.FC = () => {
+  postEvent('web_app_set_background_color', {color: '#f73b96'})
   const router = createBrowserRouter([
     {
       path: '/home',
@@ -79,9 +80,6 @@ export const AppRouter: React.FC = () => {
     }
   ]);
 
-  useEffect(() => {
-    postEvent('web_app_set_background_color', {color: '#FFFFFF'})
-  }, [])
   return (
     <>
       <Loading />
