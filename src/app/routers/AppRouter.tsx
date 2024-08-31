@@ -8,6 +8,8 @@ import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
 import { Loading } from "../../widgets/loading";
 import { postEvent } from "@telegram-apps/sdk";
+import * as stylex from '@stylexjs/stylex';
+import { styles } from './stylex.module';
 
 const navItems = [
   {
@@ -80,9 +82,9 @@ export const AppRouter: React.FC = () => {
   ]);
 
   return (
-    <>
+    <div {...stylex.props(styles.wrapper)}>
       <Loading />
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }
