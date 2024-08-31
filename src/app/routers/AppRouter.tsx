@@ -85,7 +85,7 @@ export const AppRouter: React.FC = () => {
   ]);
 
   return (
-    <div {...stylex.props(styles.wrapper)}>
+    <div >
       <Loading />
       <RouterProvider router={router} />
     </div>
