@@ -45,7 +45,6 @@ export const AppRouter: React.FC = () => {
       element: (
       <>
         <HomePage />
-        <NavBar items={navItems} />
       </>
       ),
     },
