@@ -51,10 +51,10 @@ export const AppRouter: React.FC = () => {
     {
       path: '/bookmark',
       element: (
-        <>
+        <div {...stylex.props(styles.wrapper)}>
           <HomePage />
           <NavBar items={navItems} />
-        </>
+        </div>
       ),
     },
     {
@@ -84,9 +84,9 @@ export const AppRouter: React.FC = () => {
   ]);
 
   return (
-    <div {...stylex.props(styles.wrapper)}>
+    <>
       <Loading />
       <RouterProvider router={router} />
-    </div>
+    </>
   )
 }
