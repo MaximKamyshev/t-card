@@ -12,6 +12,5 @@ export const styles = stylex.create({
   },
   main: {
     margin: '0 0 92.5px 0',
-    background: 'white',
   }
 })
