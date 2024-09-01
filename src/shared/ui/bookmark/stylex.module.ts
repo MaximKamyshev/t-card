@@ -9,7 +9,7 @@ export const styles = stylex.create({
     maskPosition: 'center',
     background: `${inActiveColor}`,
     cursor: 'pointer',
-    width: 12,
+    width: 13,
     height: 16,
     margin: '4px 6px',
     padding: 0,
