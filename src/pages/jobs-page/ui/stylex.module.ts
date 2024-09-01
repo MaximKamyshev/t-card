@@ -24,5 +24,11 @@ export const styles = stylex.create({
   jobsFoundText: {
     margin: 0,
     fontSize: 18,
+  },
+  jobsList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 8,
+    margin: '14px 0 0 0'
   }
 })

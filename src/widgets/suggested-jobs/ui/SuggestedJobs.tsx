@@ -10,7 +10,7 @@ const suggestedCards = [
     companyName: 'Telegram',
     firstColor: '#00A77F',
     secondColor: '#1c9275',
-    isBookmark: false,
+    isBookmark: true,
     salary: '195,000',
     city: 'San Francisco',
     tags: [
