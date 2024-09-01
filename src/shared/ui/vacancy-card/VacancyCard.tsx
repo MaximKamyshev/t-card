@@ -5,12 +5,13 @@ import ConfirmLogo from '../../images/for-vacancy-card/confirm.svg';
 import PinLogo from '../../images/for-vacancy-card/pin.svg';
 import { useState } from "react";
 import { Bookmark } from "../bookmark";
+import { Link } from "react-router-dom";
 
-export const VacancyCard: React.FC<VacancyCardProps> = ({ jobTitle, company, salary, city, tags, createTime, isBookmark, logo }) => {
+export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company, salary, city, tags, createTime, isBookmark, logo }) => {
   const [isCheckedBookmark, setIscheckedBookmark] = useState(isBookmark);
   
   return (
-    <article {...stylex.props(styles.card)}>
+    <Link to={`/vacancy/${id}`} {...stylex.props(styles.card)}>
       <div {...stylex.props(styles.flexContainerJustifyBetween)}>
         <div {...stylex.props(styles.flexInfoContainer)}>
           <div {...stylex.props(styles.logo(logo))} />
@@ -39,6 +40,6 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ jobTitle, company, sal
         </div>
         <p {...stylex.props(styles.salaryPrice)}>${salary}<span {...stylex.props(styles.salary)}>/year</span></p>
       </div>
-    </article>
+    </Link>
   )
 }

@@ -1,0 +1,1 @@
+export { InfoVacancySection } from "./ui/InfoVacancySection";

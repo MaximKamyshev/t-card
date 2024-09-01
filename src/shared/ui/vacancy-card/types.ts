@@ -1,4 +1,5 @@
-export interface VacancyCardProps { 
+export interface VacancyCardProps {
+  id: string 
   jobTitle: string
   company: {
     name: string

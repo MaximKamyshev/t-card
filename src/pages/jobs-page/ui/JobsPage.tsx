@@ -8,9 +8,9 @@ import TgLogo from '../images/tg.png';
 import AppleLogo from '../images/apple.png';
 
 const filterTags = ['Full-time', 'Remote', 'Part-time', 'Contract', 'Freelance', 'Internship']
-const findedJobs = [
+export const findedJobs = [
   {
-    id: 0,
+    id: '0',
     jobTitle: 'Sr. Web Designer',
     company: {
       name: 'T Mobile',
@@ -28,7 +28,7 @@ const findedJobs = [
     logo: TMobileLogo,
   },
   {
-    id: 0,
+    id: '1',
     jobTitle: 'Sr. Web Designer',
     company: {
       name: 'T Mobile',
@@ -46,7 +46,7 @@ const findedJobs = [
     logo: TMobileLogo,
   },
   {
-    id: 0,
+    id: '2',
     jobTitle: 'Sr. Web Designer',
     company: {
       name: 'Apple',
@@ -64,7 +64,7 @@ const findedJobs = [
     logo: AppleLogo,
   },
   {
-    id: 0,
+    id: '3',
     jobTitle: 'Sr. Web Designer',
     company: {
       name: 'Telegram',

@@ -13,6 +13,7 @@ import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { useEffect, useMemo } from "react";
 import { useIntegration } from "@telegram-apps/react-router-integration";
+import { VacancyPage } from "../../pages/vacancy-page";
 
 const navItems = [
   {
@@ -39,7 +40,8 @@ const navItems = [
 
 export const AppRouter: React.FC = () => {
   postEvent('web_app_set_background_color', {color: '#ffffff'});
-  const [swipeBehavior] = initSwipeBehavior()
+  postEvent('web_app_set_header_color', {color: '#ffffff'});
+  const [swipeBehavior] = initSwipeBehavior();
   swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
@@ -69,6 +71,12 @@ export const AppRouter: React.FC = () => {
           <Route path='/jobs' element={
             <>
               <JobsPage/>
+              <NavBar items={navItems} />
+            </>
+          }/>
+          <Route path='/vacancy/:slug' element={
+            <>
+              <VacancyPage/>
               <NavBar items={navItems} />
             </>
           }/>

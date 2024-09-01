@@ -5,8 +5,12 @@ import BookmarkIcon from '../../images/for-bookmark/bookmark.svg';
 import ActiveBookmarkIcon from '../../images/for-bookmark/active-bookmark.svg';
 
 export const Bookmark: React.FC<BookmarkProps> = ({ activeColor, inActiveColor, isChecked, hadnleBookmark }) => {
-
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+    hadnleBookmark()
+  }
   return (
-    <button onClick={hadnleBookmark} {...stylex.props(isChecked ? styles.bookmark(activeColor, ActiveBookmarkIcon) : styles.bookmark(inActiveColor, BookmarkIcon))} />
+    <button onClick={handleClick} {...stylex.props(isChecked ? styles.bookmark(activeColor, ActiveBookmarkIcon) : styles.bookmark(inActiveColor, BookmarkIcon))} />
   )
 }

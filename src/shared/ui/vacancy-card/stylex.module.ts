@@ -10,6 +10,9 @@ export const styles = stylex.create({
     flexDirection: 'column',
     alignItems: 'center',
     border: '1px solid #f2f1f4',
+    textDecoration: 'none',
+    color: 'black',
+    cursor: 'pointer',
   },
   logo: (imageUrl: string) => ({
     width: 45,
