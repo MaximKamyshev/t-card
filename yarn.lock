@@ -539,6 +539,11 @@
     invariant "^2.2.4"
     styleq "0.1.3"
 
+"@telegram-apps/react-router-integration@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@telegram-apps/react-router-integration/-/react-router-integration-1.0.1.tgz#a42a28b45d8f5f224845801599a91a776191bfa8"
+  integrity sha512-q5fC0ihXyUDqrSdLQ3u3gypmjI/rMU2mTHeAz9IU1F1bl5X+J17LxWmgLp+OlD0Y97bq2XYmc+UbKrYh+eN3Wg==
+
 "@telegram-apps/sdk-react@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@telegram-apps/sdk-react/-/sdk-react-1.1.3.tgz#eb3bd8b2ef3e23c97baf33b2f162864a083a0294"
