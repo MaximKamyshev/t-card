@@ -40,7 +40,7 @@ const navItems = [
 export const AppRouter: React.FC = () => {
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   const [swipeBehavior] = initSwipeBehavior()
-  swipeBehavior.disableVerticalSwipe();
+  // swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
 
@@ -53,36 +53,36 @@ export const AppRouter: React.FC = () => {
     <div {...stylex.props(styles.wrapper)}>
       <Loading />
       <Router location={location} navigator={reactNavigator}>
-      <Routes>
-        <Route path={'/home'} element={
-          <>
-            <HomePage/>
-            <NavBar items={navItems} />
-          </>
-        }/>
-        <Route path={'/bookmark'} element={
-          <>
-            <HomePage/>
-            <NavBar items={navItems} />
-          </>
-        }/>
-        <Route path={'/jobs'} element={
-          <>
-            <JobsPage/>
-            <NavBar items={navItems} />
-          </>
-        }/>
-        <Route path={'/profile'} element={
-          <>
-            <HomePage/>
-            <NavBar items={navItems} />
-          </>
-        }/>
-        <Route path={'/*'} element={
-          <Navigate to='/home' />
-        }/>
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path='/home' element={
+            <>
+              <HomePage/>
+              <NavBar items={navItems} />
+            </>
+          }/>
+          <Route path='/bookmark' element={
+            <>
+              <HomePage/>
+              <NavBar items={navItems} />
+            </>
+          }/>
+          <Route path='/jobs' element={
+            <>
+              <JobsPage/>
+              <NavBar items={navItems} />
+            </>
+          }/>
+          <Route path='/profile' element={
+            <>
+              <HomePage/>
+              <NavBar items={navItems} />
+            </>
+          }/>
+          <Route path='*' element={
+            <Navigate to='/home' />
+          }/>
+        </Routes>
+      </Router>
     </div>
   )
 }
