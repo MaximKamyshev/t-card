@@ -47,7 +47,7 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     gap: 12,
-    margin: '22px 0 0 0',
+    padding: '22px 0 0 0',
   },
   flexBetweenContainer: {
     display: 'flex',
