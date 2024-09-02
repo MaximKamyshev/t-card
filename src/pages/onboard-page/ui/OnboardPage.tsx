@@ -13,7 +13,7 @@ export const OnboardPage: React.FC = () => {
   const handleClick = () => {
     setCurrentPage(currentPage + 1);
     if (currentPage === 4) {
-      navigate('/home')
+      navigate('/home', { replace: true })
     }
   }
 
