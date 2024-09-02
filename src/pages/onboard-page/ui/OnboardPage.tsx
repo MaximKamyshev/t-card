@@ -1,8 +1,8 @@
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
-import firstSectionImage from '../images/first-section.png';
-import secondSectionImage from '../images/second-section.png';
-import thirdSectionImage from '../images/third-section.png';
+import firstSectionImage from '../images/first-section.webp';
+import secondSectionImage from '../images/second-section.webp';
+import thirdSectionImage from '../images/third-section.webp';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
