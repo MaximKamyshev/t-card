@@ -4,13 +4,13 @@ export const styles = stylex.create({
   hidden: {
     display: 'none',
   },
-  container: {
+  container: (imageUrl: string) => ({
     display: 'flex',
     justifyContent: 'space-between',
     padding: 20,
     borderRadius: 12,
-    background: 'black',
-  },
+    background: `url("${imageUrl}") center / cover no-repeat`,
+  }),
   title: {
     fontSize: 17,
     fontWeight: 500,

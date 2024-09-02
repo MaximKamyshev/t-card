@@ -39,7 +39,7 @@ export const RecentJobs: React.FC = () => {
         <Link {...stylex.props(styles.link)} to='/Jobs'>View All</Link>
       </div>
       <div {...stylex.props(styles.paddingContainer)}>
-        <ModalNotification title="Join Tools Team!" description="Start exploring Telegram in a new, better way" linkText="Try it out" linkPath="#" />
+        <ModalNotification title="Join Tools Team!" description="Start exploring Telegram in a new, better way" linkText="Leave request" linkPath="#" />
         <div {...stylex.props(styles.jobsList)}>
           {recentJobs.map((job, index) => (
             <RecentJobItem key={index} logo={job.logo} title={job.title} tags={job.tags} />

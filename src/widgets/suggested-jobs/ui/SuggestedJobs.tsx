@@ -6,47 +6,47 @@ import { SuggestedJobCard } from '../../../shared/ui/suggested-job-card';
 const suggestedCards = [
   {
     id: 0,
-    jobTitle: 'Project Manager',
-    companyName: 'Telegram',
+    jobTitle: 'FrontEnd Dev',
+    companyName: 'T - Card',
     firstColor: '#00A77F',
     secondColor: '#1c9275',
     isBookmark: true,
     salary: '195,000',
-    city: 'San Francisco',
+    city: 'Remote',
     tags: [
-      'Remote',
+      '2-3 Years',
       'Full - Time',
-      'Middle',
+      'Redux',
     ]
   },
   {
     id: 1,
-    jobTitle: 'Project Manager',
-    companyName: 'Tools',
-    firstColor: '#121A26',
-    secondColor: '#414751',
+    jobTitle: 'BackEnd Dev',
+    companyName: 'T - Card',
+    firstColor: '#0088FF',
+    secondColor: '#096dca',
     isBookmark: false,
     salary: '195,000',
-    city: 'San Francisco',
+    city: 'Remote',
     tags: [
-      'Remote',
+      '2-3 Years',
       'Full - Time',
-      'Middle',
+      'MiniApps',
     ]
   },
   {
     id: 2,
-    jobTitle: 'Project Manager',
+    jobTitle: 'Product Designer',
     companyName: 'Uniswap',
-    firstColor: '#f73c96',
-    secondColor: '#c62a77',
+    firstColor: '#121A26',
+    secondColor: '#414751',
     isBookmark: false,
     salary: '195,000',
-    city: 'San Francisco',
+    city: 'Remote',
     tags: [
       'Remote',
       'Full - Time',
-      'Senior',
+      'Figma',
     ]
   }
 ]

@@ -11,9 +11,10 @@ import { postEvent } from "@telegram-apps/sdk";
 import { initNavigator, initSwipeBehavior } from "@telegram-apps/sdk-react";
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useIntegration } from "@telegram-apps/react-router-integration";
 import { VacancyPage } from "../../pages/vacancy-page";
+import { OnboardPage } from "../../pages/onboard-page";
 
 const navItems = [
   {
@@ -41,10 +42,17 @@ const navItems = [
 export const AppRouter: React.FC = () => {
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   postEvent('web_app_set_header_color', {color: '#ffffff'});
+  const [isLoading, setIsLoading] = useState(false);
   const [swipeBehavior] = initSwipeBehavior();
   swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true)
+    }, 1500)
+  }, [])
 
   useEffect(() => {
     navigator.attach();
@@ -52,45 +60,46 @@ export const AppRouter: React.FC = () => {
   }, [navigator]);
 
   return (
-    <div {...stylex.props(styles.wrapper)}>
-      <Loading />
+    <>
+      <Loading isLoading={isLoading} />
       <Router location={location} navigator={reactNavigator}>
         <Routes>
           <Route path='/home' element={
-            <>
+            <div {...stylex.props(styles.wrapper)}>
               <HomePage/>
               <NavBar items={navItems} />
-            </>
+            </div>
           }/>
           <Route path='/bookmark' element={
-            <>
+            <div {...stylex.props(styles.wrapper)}>
               <HomePage/>
               <NavBar items={navItems} />
-            </>
+            </div>
           }/>
           <Route path='/jobs' element={
-            <>
+            <div {...stylex.props(styles.wrapper)}>
               <JobsPage/>
               <NavBar items={navItems} />
-            </>
+            </div>
           }/>
           <Route path='/vacancy/:slug' element={
-            <>
+            <div {...stylex.props(styles.wrapper)}>
               <VacancyPage/>
               <NavBar items={navItems} />
-            </>
+            </div>
           }/>
           <Route path='/profile' element={
-            <>
+            <div {...stylex.props(styles.wrapper)}>
               <HomePage/>
               <NavBar items={navItems} />
-            </>
+            </div>
           }/>
+          <Route path='/onboard' element={<OnboardPage />}/>
           <Route path='*' element={
             <Navigate to='/home' />
           }/>
         </Routes>
       </Router>
-    </div>
+    </>
   )
 }

@@ -19,6 +19,7 @@ export const styles = stylex.create({
   }),
   flexContainer: {
     display: 'flex',
+    justifyContent: 'space-between',
   },
   flexCenterContainer: {
     display: 'flex',
