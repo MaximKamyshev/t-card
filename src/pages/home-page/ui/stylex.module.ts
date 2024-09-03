@@ -12,5 +12,6 @@ export const styles = stylex.create({
   },
   mainWrapper: {
     overflow: 'auto',
+    height: '10000px',
   }
 })
