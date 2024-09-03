@@ -6,7 +6,7 @@ body, html {
   padding: 0;
   font-family: 'Sf-pro-rounded', sans-serif;
   max-width: 1000px;
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
