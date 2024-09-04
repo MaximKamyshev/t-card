@@ -7,7 +7,6 @@ body, html {
   font-family: 'Sf-pro-rounded', sans-serif;
   max-width: 1000px;
   overflow: hidden;
-  height: 100vh;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
