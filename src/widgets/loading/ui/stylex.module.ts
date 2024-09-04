@@ -14,6 +14,7 @@ export const styles = stylex.create({
     bottom: 0,
     top: 0,
     opacity: 1,
+    overflow: 'hidden',
     transition: 'visibility 0.3s linear,opacity 0.3s ease-in-out',
  }),
   hidden: {
