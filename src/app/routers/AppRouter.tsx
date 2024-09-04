@@ -41,7 +41,7 @@ const navItems = [
 ]
 
 export const AppRouter: React.FC = () => {
-  const [updateUser, updatePlatform] = useInitDataStore((state: any) => [state.updateUser, state.updatePlatform]);
+  const [updateUser, updatePlatform, platform] = useInitDataStore((state: any) => [state.updateUser, state.updatePlatform, state.platform]);
   const initData = useInitData();
   const lp = useLaunchParams();
   const userRows = useMemo(() => {
@@ -80,31 +80,31 @@ export const AppRouter: React.FC = () => {
       <Router location={location} navigator={reactNavigator}>
         <Routes>
           <Route path='/home' element={
-            <div {...stylex.props(styles.wrapper)}>
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <HomePage/>
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/bookmark' element={
-            <div {...stylex.props(styles.wrapper)}>
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <HomePage/>
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/jobs' element={
-            <div {...stylex.props(styles.wrapper)}>
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <JobsPage/>
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/vacancy/:slug' element={
-            <div {...stylex.props(styles.wrapper)}>
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <VacancyPage/>
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/profile' element={
-            <div {...stylex.props(styles.wrapper)}>
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <HomePage/>
               <NavBar items={navItems} />
             </div>
