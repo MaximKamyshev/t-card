@@ -11,6 +11,6 @@ export const styles = stylex.create({
     overflowX: 'hidden',
   },
   iosPadding: {
-    paddingBottom: '49px',
+    paddingBottom: '133px',
   }
 })
