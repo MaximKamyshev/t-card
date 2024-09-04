@@ -7,6 +7,6 @@ export const styles = stylex.create({
     width: '100%',
     boxSizing: 'border-box',
     overflow: 'auto',
-    minHeight: '100vh',
+    height: 'fit-content'
   }
 })
