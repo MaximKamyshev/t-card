@@ -9,7 +9,7 @@ export const styles = stylex.create({
     height: '100vh',
     width: '100%',
     gap: 15,
-    paddingBottom: 15,
+    paddingBottom: 49,
     boxSizing: 'border-box',
     background: 'white',
   },
@@ -19,7 +19,7 @@ export const styles = stylex.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 15,
-    paddingBottom: 15,
+    paddingBottom: 49,
     boxSizing: 'border-box',
   },
   invisible: {

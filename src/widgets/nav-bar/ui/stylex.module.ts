@@ -10,7 +10,7 @@ export const styles = stylex.create({
     maxWidth: '1000px',
     position: 'fixed',
     bottom: 0,
-    padding: 9,
+    padding: '9px 9px 49px 9px',
     background: '#ffffffbf',
     backdropFilter: 'blur(4px)',
     zIndex: 100,
