@@ -6,7 +6,7 @@ export const styles = stylex.create({
     padding: '0 0 68.5px 0',
     width: '100%',
     boxSizing: 'border-box',
-    height: 200,
+    height: '100vh',
     overflow: 'auto'
   }
 })
