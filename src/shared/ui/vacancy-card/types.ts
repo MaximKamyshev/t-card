@@ -6,7 +6,7 @@ export interface VacancyCardProps {
     isConfirm: boolean
   }
   salary: string
-  city: string
+  place: string
   tags: string[]
   isBookmark?: boolean
   logo: string

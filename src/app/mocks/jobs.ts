@@ -1,0 +1,147 @@
+import TMobileLogo from './images/t-mobile.png';
+import TgLogo from './images/tg.png';
+import AppleLogo from './images/apple.png';
+import TCardLogo from './images/t-card.svg';
+
+export const Jobs = [
+  {
+    id: 'asda',
+    jobTitle: 'FrontEnd Dev',
+    company: {
+      name: 'T - Card',
+      isConfirm: true,
+    },
+    firstColor: '#00A77F',
+    secondColor: '#1c9275',
+    isBookmark: true,
+    salary: '195,000',
+    place: 'Remote',
+    createTime: '5 hours',
+    tags: [
+      '2-3 Years',
+      'Full - Time',
+      'Redux',
+    ],
+    logo: TCardLogo,
+  },
+  {
+    id: 'dfasf',
+    jobTitle: 'BackEnd Dev',
+    company: {
+      name: 'T - Card',
+      isConfirm: true,
+    },
+    firstColor: '#0088FF',
+    secondColor: '#096dca',
+    isBookmark: false,
+    salary: '195,000',
+    place: 'Remote',
+    createTime: '5 hours',
+    tags: [
+      '2-3 Years',
+      'Full - Time',
+      'MiniApps',
+    ],
+    logo: TCardLogo,
+  },
+  {
+    id: '31',
+    jobTitle: 'Product Designer',
+    company: {
+      name: 'Uniswap',
+      isConfirm: true,
+    },
+    firstColor: '#121A26',
+    secondColor: '#414751',
+    isBookmark: false,
+    salary: '195,000',
+    place: 'Remote',
+    createTime: '5 hours',
+    tags: [
+      'Remote',
+      'Full - Time',
+      'Figma',
+    ],
+    logo: TCardLogo,
+  },
+  {
+    id: '0',
+    jobTitle: 'Sr. Web Designer',
+    company: {
+      name: 'T Mobile',
+      isConfirm: true,
+    },
+    firstColor: '#121A26',
+    secondColor: '#414751',
+    isBookmark: false,
+    salary: '195,000',
+    place: 'Madrid',
+    createTime: '5 hours',
+    tags: [
+      'Remote',
+      'Full - Time',
+      'Senior',
+    ],
+    logo: TMobileLogo,
+  },
+  {
+    id: '1',
+    jobTitle: 'Sr. Web Designer',
+    company: {
+      name: 'T Mobile',
+      isConfirm: true,
+    },
+    firstColor: '#121A26',
+    secondColor: '#414751',
+    isBookmark: true,
+    salary: '195,000',
+    place: 'Madrid',
+    createTime: '5 hours',
+    tags: [
+      'Remote',
+      'Full - Time',
+      'Senior',
+    ],
+    logo: TMobileLogo,
+  },
+  {
+    id: '2',
+    jobTitle: 'Sr. Web Designer',
+    company: {
+      name: 'Apple',
+      isConfirm: true,
+    },
+    firstColor: '#121A26',
+    secondColor: '#414751',
+    isBookmark: false,
+    salary: '195,000',
+    place: 'Madrid',
+    createTime: '5 hours',
+    tags: [
+      'Remote',
+      'Full - Time',
+      'Senior',
+    ],
+    logo: AppleLogo,
+  },
+  {
+    id: '3',
+    jobTitle: 'Sr. Web Designer',
+    company: {
+      name: 'Telegram',
+      isConfirm: false,
+    },
+    firstColor: '#121A26',
+    secondColor: '#414751',
+    isBookmark: false,
+    salary: '195,000',
+    place: 'Madrid',
+    createTime: '5 hours',
+    tags: [
+      'Remote',
+      'Full - Time',
+      'Senior',
+    ],
+    logo: TgLogo,
+  },
+]

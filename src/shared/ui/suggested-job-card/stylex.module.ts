@@ -14,8 +14,9 @@ export const styles = stylex.create({
     width: 45,
     height: 45,
     borderRadius: 12,
-    background: `${secondColor} url("${imageUrl}") center / 13px 20px no-repeat`,
+    background: `${secondColor} url("${imageUrl}") center / contain no-repeat`,
     marginRight: 12,
+    boxShadow: '0 2.2px 5.3px 0 #00000040',
   }),
   flexContainer: {
     display: 'flex',

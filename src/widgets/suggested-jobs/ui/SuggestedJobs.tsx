@@ -2,54 +2,7 @@ import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { Link } from 'react-router-dom';
 import { SuggestedJobCard } from '../../../shared/ui/suggested-job-card';
-
-const suggestedCards = [
-  {
-    id: 0,
-    jobTitle: 'FrontEnd Dev',
-    companyName: 'T - Card',
-    firstColor: '#00A77F',
-    secondColor: '#1c9275',
-    isBookmark: true,
-    salary: '195,000',
-    city: 'Remote',
-    tags: [
-      '2-3 Years',
-      'Full - Time',
-      'Redux',
-    ]
-  },
-  {
-    id: 1,
-    jobTitle: 'BackEnd Dev',
-    companyName: 'T - Card',
-    firstColor: '#0088FF',
-    secondColor: '#096dca',
-    isBookmark: false,
-    salary: '195,000',
-    city: 'Remote',
-    tags: [
-      '2-3 Years',
-      'Full - Time',
-      'MiniApps',
-    ]
-  },
-  {
-    id: 2,
-    jobTitle: 'Product Designer',
-    companyName: 'Uniswap',
-    firstColor: '#121A26',
-    secondColor: '#414751',
-    isBookmark: false,
-    salary: '195,000',
-    city: 'Remote',
-    tags: [
-      'Remote',
-      'Full - Time',
-      'Figma',
-    ]
-  }
-]
+import { Jobs } from '../../../app/mocks/jobs';
 
 export const SuggestedJobs: React.FC = () => {
   return (
@@ -62,8 +15,8 @@ export const SuggestedJobs: React.FC = () => {
         <Link {...stylex.props(styles.link)} to='/Jobs'>View All</Link>
       </div>
       <div {...stylex.props(styles.list)}>
-        {suggestedCards.map((card, index) => (
-          <SuggestedJobCard key={index} {...card} />
+        {Jobs.map((card) => (
+          <SuggestedJobCard key={card.id} logo={card.logo} firstColor={card.firstColor} secondColor={card.secondColor} jobTitle={card.jobTitle} company={card.company} isBookmark={card.isBookmark} salary={card.salary} place={card.place} tags={card.tags} />
         ))}
       </div>
     </section>

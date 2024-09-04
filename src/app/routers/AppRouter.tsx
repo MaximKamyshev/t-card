@@ -8,13 +8,14 @@ import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
 import { Loading } from "../../widgets/loading";
 import { postEvent } from "@telegram-apps/sdk";
-import { initNavigator, initSwipeBehavior } from "@telegram-apps/sdk-react";
+import { initNavigator, initSwipeBehavior, useInitData, useLaunchParams } from "@telegram-apps/sdk-react";
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { useEffect, useMemo, useState } from "react";
 import { useIntegration } from "@telegram-apps/react-router-integration";
 import { VacancyPage } from "../../pages/vacancy-page";
 import { OnboardPage } from "../../pages/onboard-page";
+import { useInitDataStore } from '../stores/init-data.store';
 
 const navItems = [
   {
@@ -40,6 +41,13 @@ const navItems = [
 ]
 
 export const AppRouter: React.FC = () => {
+  const [updateUser, updatePlatform] = useInitDataStore((state: any) => [state.updateUser, state.updatePlatform]);
+  const initData = useInitData();
+  const lp = useLaunchParams();
+  const userRows = useMemo(() => {
+    return initData && initData.user ? initData.user : undefined;
+  }, [initData]);
+
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   postEvent('web_app_set_header_color', {color: '#ffffff'});
   const [isLoading, setIsLoading] = useState(false);
@@ -53,6 +61,13 @@ export const AppRouter: React.FC = () => {
       setIsLoading(true)
     }, 1500)
   }, [])
+
+
+
+  useEffect(() => {
+    updateUser(userRows)
+    updatePlatform(lp.platform)
+  }, [initData, lp])
 
   useEffect(() => {
     navigator.attach();

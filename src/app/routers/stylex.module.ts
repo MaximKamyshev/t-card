@@ -9,5 +9,8 @@ export const styles = stylex.create({
     height: '100vh',
     overflowY: 'auto',
     overflowX: 'hidden',
+  },
+  iosPadding: {
+    paddingBottom: '49px',
   }
 })

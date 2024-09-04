@@ -10,10 +10,13 @@ export const styles = stylex.create({
     maxWidth: '1000px',
     position: 'fixed',
     bottom: 0,
-    padding: '9px 9px 49px 9px',
+    padding: 9,
     background: '#ffffffbf',
     backdropFilter: 'blur(4px)',
     zIndex: 100,
     borderTop: '0.33px solid #6a6c70',
+  },
+  iosPadding: {
+    padding: '9px 9px 34px 9px',
   }
 })

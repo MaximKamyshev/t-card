@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Bookmark } from "../bookmark";
 import { Link } from "react-router-dom";
 
-export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company, salary, city, tags, createTime, isBookmark, logo }) => {
+export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company, salary, place, tags, createTime, isBookmark, logo }) => {
   const [isCheckedBookmark, setIscheckedBookmark] = useState(isBookmark);
   
   return (
@@ -36,7 +36,7 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company,
       <div {...stylex.props(styles.flexBetweenContainer)}>
         <div {...stylex.props(styles.companyContainer)}>
           <div {...stylex.props(styles.pin(PinLogo))} />
-          <p {...stylex.props(styles.city)}>{city}</p>
+          <p {...stylex.props(styles.city)}>{place}</p>
         </div>
         <p {...stylex.props(styles.salaryPrice)}>${salary}<span {...stylex.props(styles.salary)}>/year</span></p>
       </div>

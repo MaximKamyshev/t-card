@@ -2,9 +2,13 @@ export interface SuggestedJobCardProps {
   firstColor: string
   secondColor: string
   jobTitle: string
-  companyName: string
+  company: {
+    name: string
+    isConfirm: boolean
+  }
   isBookmark: boolean
   salary: string
-  city: string
+  place: string
   tags: string[]
+  logo: string
 }

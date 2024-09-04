@@ -9,19 +9,23 @@ export const styles = stylex.create({
     height: '100vh',
     width: '100%',
     gap: 15,
-    paddingBottom: 49,
+    paddingBottom: 15,
     boxSizing: 'border-box',
     background: 'white',
   },
-  container: {
+  iosPadding: {
+    paddingBottom: 49,
+  },
+  container: (imageUrl: string) => ({
+    background: `url(${imageUrl}) top / contain no-repeat`,
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 15,
-    paddingBottom: 49,
+    paddingBottom: 15,
     boxSizing: 'border-box',
-  },
+  }),
   invisible: {
     display: 'none',
   },
@@ -35,27 +39,51 @@ export const styles = stylex.create({
     flex: '1 0 auto',
     background: `url(${imageUrl}) center / 80% no-repeat`,
   }),
-  text: {
-    maxWidth: 340,
+  text: (maxWidth: string | number) => ({
+    maxWidth: maxWidth,
     textAlign: 'center',
     fontSize: 32,
     fontWeight: 500,
     margin: 0,
+  }),
+  textLeft: (maxWidth: string | number) => ({
+    maxWidth: maxWidth,
+    textAlign: 'left',
+    fontSize: 32,
+    paddingTop: 57,
+    fontWeight: 500,
+    margin: 0,
+  }),
+  infoContainer: {
+    padding: '0 26px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
   },
-  description: {
+  description: (align: string) => ({
     text: 15,
     fontWeight: 300,
     color: '#6C6C6C',
     maxWidth: 340,
-    textAlign: 'center',
+    textAlign: align,
     margin: 0,
+  }),
+  list: {
+    text: 15,
+    fontWeight: 300,
+    color: '#6C6C6C',
+    margin: 0,
+    paddingLeft: 20,
   },
   importantText: {
     color: '#CF000A',
+    margin: 0,
+    marginTop: 15,
   },
   version: {
     fontSize: 15,
     margin: 0,
+    alignSelf: 'center'
   },
   testText: {
     color: '#6C6C6C',
@@ -78,5 +106,11 @@ export const styles = stylex.create({
     fontSize: 16,
     width: 135,
     borderRadius: 15,
+    alignSelf: 'center'
+  },
+  listTitle: {
+    fontSize: 24,
+    fontWeight: 500,
+    margin: 0,
   }
 })
