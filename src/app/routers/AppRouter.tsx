@@ -1,4 +1,4 @@
-import { Navigate, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";

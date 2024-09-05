@@ -12,7 +12,7 @@ export const HomePage: React.FC = () => {
   const user = useInitDataStore((state: any) => state.user);
   
   return (
-    <div {...stylex.props(styles.mainWrapper)}>
+    <div>
       <header {...stylex.props(styles.header)}>
         <ProfileInfo avatar={user?.photoUrl} username={`${user?.firstName} ${user?.lastName}`} />
         <CircleButton image={bellIcon} />
