@@ -7,11 +7,11 @@ export const InfoVacancySection: React.FC<InfoVacancySectionProps> = ({ logo, co
     <section>
       <div {...stylex.props(styles.flexInfoContainer)}>
         <div {...stylex.props(styles.logo(logo !== undefined ? logo : ''))} />
-        <p {...stylex.props(styles.companyName)}>{companyName}</p>
-      </div>
-      <div {...stylex.props(styles.flexBetweenContainer)}>
-        <p {...stylex.props(styles.vacancy)}>{jobTitle}</p>
-        <p {...stylex.props(styles.salaryPrice)}>${salary}<span {...stylex.props(styles.salary)}>/year</span></p>
+        <div {...stylex.props(styles.flexContainer)}>
+          <p {...stylex.props(styles.vacancy)}>{jobTitle}</p>
+          <p {...stylex.props(styles.salaryPrice)}>${salary}<span {...stylex.props(styles.salary)}>/year</span></p>
+          <p {...stylex.props(styles.respondedPeople)}>Responded: <span {...stylex.props(styles.greenText)}>00</span> people</p>
+        </div>
       </div>
       <div {...stylex.props(styles.tagsContainer)}>
         {tags && tags.map((tag, index) => (

@@ -2,7 +2,7 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   header: {
-    padding: '15px 20px 14px 20px'
+    padding: '15px 20px 14px 20px',
   },
   title: {
     margin: 0,
@@ -30,5 +30,12 @@ export const styles = stylex.create({
     flexDirection: 'column',
     gap: 8,
     margin: '14px 0 0 0'
-  }
+  },
+  filterButtonWrapper: (bottomSize: string) =>  ({
+    position: 'fixed',
+    bottom: `${bottomSize}`,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  })
 })

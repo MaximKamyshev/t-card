@@ -4,10 +4,14 @@ import { styles } from './stylex.module';
 import { FilterTag } from "../../../shared/ui/filter-tag";
 import { VacancyCard } from "../../../shared/ui/vacancy-card";
 import { Jobs } from "../../../app/mocks/jobs";
+import { FilterSortButton } from "../../../shared/ui/filter-sort-button";
+import { useInitDataStore } from "../../../app/stores/init-data.store";
 
 const filterTags = ['Full-time', 'Remote', 'Part-time', 'Contract', 'Freelance', 'Internship']
 
 export const JobsPage: React.FC = () => {
+  const platform = useInitDataStore((state: any) => state.platform);
+
   return (
     <>
       <header {...stylex.props(styles.header)}>
@@ -29,6 +33,9 @@ export const JobsPage: React.FC = () => {
               <VacancyCard key={index} id={job.id} jobTitle={job.jobTitle} company={job.company} salary={job.salary} place={job.place} tags={job.tags} createTime={job.createTime} isBookmark={job.isBookmark} logo={job.logo} />
             ))}
           </div>
+        </div>
+        <div {...stylex.props(styles.filterButtonWrapper(platform == 'ios' ? '113px' : '79px'))}>
+          <FilterSortButton />
         </div>
       </main>
     </>

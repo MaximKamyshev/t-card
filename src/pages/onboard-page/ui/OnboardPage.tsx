@@ -24,14 +24,14 @@ export const OnboardPage: React.FC = () => {
     <main>
       <section {...stylex.props(currentPage === 1 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.image(firstSectionImage))} />
-        <div {...stylex.props(styles.infoContainer)}>
+        <div {...stylex.props(styles.infoContainerCenter)}>
           <p {...stylex.props(styles.text(310))}>Get your Dream Job! with <span {...stylex.props(styles.greenText)}>T - Card</span></p>
           <button onClick={handleClick} {...stylex.props(styles.button)}>Let’s Start</button>
         </div>
       </section>
       <section {...stylex.props(currentPage === 2 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.secondImage(secondSectionImage))} />
-        <div {...stylex.props(styles.infoContainer)}>
+        <div {...stylex.props(styles.infoContainerCenter)}>
           <p {...stylex.props(styles.text(310))}>This is a test version of the <span {...stylex.props(styles.greenText)}>T - Card</span></p>
           <p {...stylex.props(styles.description('center'))}>We want to create a really quality product, so we are releasing this version of the app to get suggestions for improvements and suggestions for the app</p>
           <button onClick={handleClick} {...stylex.props(styles.button)}>Continue</button>
@@ -40,7 +40,7 @@ export const OnboardPage: React.FC = () => {
       </section>
       <section {...stylex.props(currentPage === 3 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.image(thirdSectionImage))} />
-        <div {...stylex.props(styles.infoContainer)}>
+        <div {...stylex.props(styles.infoContainerCenter)}>
           <p {...stylex.props(styles.text(320))}><span {...stylex.props(styles.greenText)}>Earn coins</span> for activities in the T Card app!</p>
           <p {...stylex.props(styles.description('center'))}>Exchange your earned coins for premium accounts, free job listings, participate in Airdrop and more!</p>
           <button onClick={handleClick} {...stylex.props(styles.button)}>Continue</button>

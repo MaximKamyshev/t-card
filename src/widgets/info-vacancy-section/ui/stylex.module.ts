@@ -2,20 +2,14 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   logo: (imageUrl: string) => ({
-    background: `url("${imageUrl}") center / contain no-repeat`,
+    background: `url("${imageUrl}") center / cover no-repeat`,
     width: 80,
     height: 80,
-    borderRadius: 21,
+    borderRadius: 11,
     boxShadow: '0 0 5.3px 0 #00000040',
   }),
-  companyName: {
-    fontSize: 24,
-    fontWeight: 500,
-    margin: 0,
-    textDecoration: 'underline',
-  },
   vacancy: {
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: 500,
     margin: 0,
   },
@@ -23,6 +17,7 @@ export const styles = stylex.create({
     fontSize: 16,
     color: '#00A77F',
     margin: 0,
+    fontWeight: 400,
   },
   salaryPrice: {
     color: 'black',
@@ -45,19 +40,27 @@ export const styles = stylex.create({
   },
   flexInfoContainer: {
     display: 'flex',
-    alignItems: 'center',
-    gap: 12,
-    padding: '22px 0 0 0',
+    alignItems: 'end',
+    gap: 15,
+    padding: '22px 0 5px 0',
   },
-  flexBetweenContainer: {
+  flexContainer: {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    margin: '17px 0 5px 0',
+    flexDirection: 'column',
+    gap: 5,
   },
   date: {
     fontSize: 12,
     color: '#5C5C5C',
-    margin: '6px 0 0 0'
+    margin: 0,
+  },
+  respondedPeople: {
+    fontSize: 12,
+    fontWeight: 300,
+    color: '#5C5C5C',
+    margin: 0
+  },
+  greenText: {
+    color: '#00A77F',
   }
 })

@@ -61,6 +61,13 @@ export const styles = stylex.create({
     flexDirection: 'column',
     gap: 15,
   },
+  infoContainerCenter: {
+    padding: '0 26px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
+    alignItems: 'center',
+  },
   description: (align: string) => ({
     text: 15,
     fontWeight: 300,

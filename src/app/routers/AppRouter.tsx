@@ -1,4 +1,4 @@
-import { Navigate, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";
@@ -52,7 +52,7 @@ export const AppRouter: React.FC = () => {
   postEvent('web_app_set_header_color', {color: '#ffffff'});
   const [isLoading, setIsLoading] = useState(false);
   const [swipeBehavior] = initSwipeBehavior();
-  swipeBehavior.disableVerticalSwipe();
+  // swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
 
@@ -69,15 +69,15 @@ export const AppRouter: React.FC = () => {
     updatePlatform(lp.platform)
   }, [initData, lp])
 
-  useEffect(() => {
-    navigator.attach();
-    return () => navigator.detach();
-  }, [navigator]);
+  // useEffect(() => {
+  //   navigator.attach();
+  //   return () => navigator.detach();
+  // }, [navigator]);
 
   return (
     <>
       <Loading isLoading={isLoading} />
-      <Router location={location} navigator={reactNavigator}>
+      <BrowserRouter>
         <Routes>
           <Route path='/home' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
@@ -114,7 +114,7 @@ export const AppRouter: React.FC = () => {
             <Navigate to='/home' />
           }/>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </>
   )
 }
