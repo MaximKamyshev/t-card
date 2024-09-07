@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
+import { Navigate, Route, Router, Routes } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";
@@ -16,6 +16,8 @@ import { useIntegration } from "@telegram-apps/react-router-integration";
 import { VacancyPage } from "../../pages/vacancy-page";
 import { OnboardPage } from "../../pages/onboard-page";
 import { useInitDataStore } from '../stores/init-data.store';
+import { ProfilePage } from "../../pages/profile-page";
+import AvatarLogo from "../mocks/images/avatar.png";
 
 const navItems = [
   {
@@ -52,7 +54,7 @@ export const AppRouter: React.FC = () => {
   postEvent('web_app_set_header_color', {color: '#ffffff'});
   const [isLoading, setIsLoading] = useState(false);
   const [swipeBehavior] = initSwipeBehavior();
-  // swipeBehavior.disableVerticalSwipe();
+  swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
 
@@ -65,47 +67,47 @@ export const AppRouter: React.FC = () => {
 
 
   useEffect(() => {
-    updateUser(userRows)
+    updateUser({...userRows, photoUrl: AvatarLogo})
     updatePlatform(lp.platform)
   }, [initData, lp])
 
-  // useEffect(() => {
-  //   navigator.attach();
-  //   return () => navigator.detach();
-  // }, [navigator]);
+  useEffect(() => {
+    navigator.attach();
+    return () => navigator.detach();
+  }, [navigator]);
 
   return (
     <>
       <Loading isLoading={isLoading} />
-      <BrowserRouter>
+      <Router location={location} navigator={reactNavigator}>
         <Routes>
           <Route path='/home' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <HomePage/>
+              <HomePage />
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/bookmark' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <HomePage/>
+              <HomePage />
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/jobs' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <JobsPage/>
+              <JobsPage />
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/vacancy/:slug' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <VacancyPage/>
+              <VacancyPage />
               <NavBar items={navItems} />
             </div>
           }/>
           <Route path='/profile' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <HomePage/>
+              <ProfilePage />
               <NavBar items={navItems} />
             </div>
           }/>
@@ -114,7 +116,7 @@ export const AppRouter: React.FC = () => {
             <Navigate to='/home' />
           }/>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   )
 }
