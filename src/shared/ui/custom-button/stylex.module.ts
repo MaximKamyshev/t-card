@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
-  button: (bgColor?: string, imageUrl?: string, textColor?: string, textSize?: number, px?: number, py?: number, isSoon?: boolean, isDisabled?: boolean, displayVersion?: 'flex' | 'inline-flex') => ({
+  button: (bgColor?: string, imageUrl?: string, textColor?: string, textSize?: number, px?: number, py?: number, displayVersion?: 'flex' | 'inline-flex') => ({
     backgroundColor: bgColor ? bgColor : 'black',
     border: 'none',
     borderRadius: 15,
