@@ -2,7 +2,7 @@ import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { InfoVacancySectionProps } from './types';
 
-export const InfoVacancySection: React.FC<InfoVacancySectionProps> = ({ logo, companyName, jobTitle, salary, tags }) => {
+export const InfoVacancySection: React.FC<InfoVacancySectionProps> = ({ logo, jobTitle, salary, tags }) => {
   return (
     <section>
       <div {...stylex.props(styles.flexInfoContainer)}>

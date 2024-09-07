@@ -10,7 +10,7 @@ export const VacancyPage: React.FC = () => {
   const [vacancy] = useState(Jobs.find(vacancy => vacancy.id == slug));
   return (
     <main {...stylex.props(styles.mainContainer)}>
-      <InfoVacancySection logo={vacancy?.logo} companyName={vacancy?.company.name} jobTitle={vacancy?.jobTitle} tags={vacancy?.tags} salary={vacancy?.salary} />
+      <InfoVacancySection logo={vacancy?.logo} jobTitle={vacancy?.jobTitle} tags={vacancy?.tags} salary={vacancy?.salary} />
     </main>
   )
 }
