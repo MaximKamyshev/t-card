@@ -5,7 +5,7 @@ import { FilterTag } from "../../../shared/ui/filter-tag";
 import { VacancyCard } from "../../../shared/ui/vacancy-card";
 import { Jobs } from "../../../app/mocks/jobs";
 import { FilterSortButton } from "../../../shared/ui/filter-sort-button";
-import { useInitDataStore } from "../../../app/stores/init-data.store";
+import { useInitDataStore } from "../../../app/stores/init-data/init-data.store";
 
 const filterTags = ['Full-time', 'Remote', 'Part-time', 'Contract', 'Freelance', 'Internship']
 

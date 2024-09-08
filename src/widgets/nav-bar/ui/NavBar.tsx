@@ -2,7 +2,7 @@ import { ButtonWithSubscription } from "../../../shared/ui/button-with-subscript
 import { NavBarProps } from "./types";
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
-import { useInitDataStore } from "../../../app/stores/init-data.store";
+import { useInitDataStore } from "../../../app/stores/init-data/init-data.store";
 
 export const NavBar: React.FC<NavBarProps> = ({items}) => {
   const platform = useInitDataStore((state: any) => state.platform);

@@ -6,7 +6,8 @@ import thirdSectionImage from '../images/third-section.webp';
 import fourthSectionImage from '../images/fourth-section.webp';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useInitDataStore } from '../../../app/stores/init-data.store';
+import { useInitDataStore } from '../../../app/stores/init-data/init-data.store';
+import { TestVersionText } from '../../../shared/ui/test-version-text/TestVersionText';
 
 export const OnboardPage: React.FC = () => {
   const platform = useInitDataStore((state: any) => state.platform);
@@ -35,7 +36,7 @@ export const OnboardPage: React.FC = () => {
           <p {...stylex.props(styles.text(310))}>This is a test version of the <span {...stylex.props(styles.greenText)}>T - Card</span></p>
           <p {...stylex.props(styles.description('center'))}>We want to create a really quality product, so we are releasing this version of the app to get suggestions for improvements and suggestions for the app</p>
           <button onClick={handleClick} {...stylex.props(styles.button)}>Continue</button>
-          <p {...stylex.props(styles.version)}>T - Card Version: <span{...stylex.props(styles.testText)}>Test</span> <span {...stylex.props(styles.versionNumber)}>0.0.01</span></p>
+          <TestVersionText />
         </div>
       </section>
       <section {...stylex.props(currentPage === 3 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>

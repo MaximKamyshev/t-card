@@ -88,19 +88,6 @@ export const styles = stylex.create({
     margin: 0,
     marginTop: 15,
   },
-  version: {
-    fontSize: 15,
-    margin: 0,
-    alignSelf: 'center'
-  },
-  testText: {
-    color: '#6C6C6C',
-    fontWeight: 300,
-  },
-  versionNumber: {
-    color: '#00A77F',
-    fontWeight: 300,
-  },
   greenText: {
     color: '#00A77F',
   },

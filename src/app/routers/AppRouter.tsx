@@ -15,7 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useIntegration } from "@telegram-apps/react-router-integration";
 import { VacancyPage } from "../../pages/vacancy-page";
 import { OnboardPage } from "../../pages/onboard-page";
-import { useInitDataStore } from '../stores/init-data.store';
+import { useInitDataStore } from '../stores/init-data/init-data.store';
 import { ProfilePage } from "../../pages/profile-page";
 import AvatarLogo from "../mocks/images/avatar.png";
 

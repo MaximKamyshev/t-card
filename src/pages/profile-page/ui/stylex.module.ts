@@ -7,6 +7,7 @@ export const styles = stylex.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: '0 17.5px',
+    position: 'relative',
   },
   buttonsContainer: {
     display: 'flex',
@@ -41,13 +42,17 @@ export const styles = stylex.create({
     borderRadius: 16,
     border: '1px solid #d9d9d9',
     padding: 20,
-    margin: '17px 0 0 0'
+    margin: '17px 0 0 0',
+    alignSelf: 'stretch',
   },
-  notifLogo: (imageUrl: string) => ({
-    width: 24,
-    display: 'block',
-    height: 24,
+  logo: (imageUrl: string, size: number) => ({
+    width: size,
+    display: 'inline-block',
+    height: size,
     background: `url(${imageUrl}) center / contain no-repeat`,
+    border: 'none',
+    flexShrink: 1,
+    outline: 'none',
   }),
   notifText: {
     fontSize: 15,
@@ -61,8 +66,9 @@ export const styles = stylex.create({
     background: "#131F1C",
     borderRadius: 20,
     fontWeight: 600,
+    flexShrink: 0,
     textDecoration: 'none',
-    flex: '1 0 auto',
+    display: 'inline-block',
   },
   notifGreenText: {
     fontSize: 11,
@@ -74,5 +80,20 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  createResumeContainer: (imageUrl: string) => ({
+    padding: '39px 24px',
+    background: `url(${imageUrl}) center right / contain no-repeat`,
+    backgroundColor: 'black',
+    alignSelf: 'stretch',
+    borderRadius: 20,
+    margin: '10px 0 29px 0',
+  }),
+  createResumeText: {
+    margin: ' 0 0 11px 0',
+    color: 'white',
+    fontSize: 22,
+    fontWeight: 300,
+    maxWidth: 114,
   }
 })

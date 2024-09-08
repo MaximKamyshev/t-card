@@ -9,5 +9,6 @@ export interface CustomButtonProps {
   isSoon?: boolean
   isDisabled?: boolean
   displayVersion?: 'flex' | 'inline-flex'
-  imageSize?: number
+  imageSize?: number,
+  handlePress?: () => void
 }

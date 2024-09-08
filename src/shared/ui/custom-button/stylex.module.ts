@@ -6,12 +6,16 @@ export const styles = stylex.create({
     border: 'none',
     borderRadius: 15,
     color: textColor ? textColor : 'white',
-    cursor: 'pointer',
+    cursor: {
+      default: 'pointer',
+      ':disabled': 'default',
+    },
     display: displayVersion ? displayVersion : 'inline-flex',
     fontSize: textSize ? textSize : 16,
     alignItems: 'center',
     gap: imageUrl ? 3 : 0,
     padding: `${py ? py : 10}px ${px ? px : 20}px`,
+    textWrap: 'nowrap',
   }),
   logo: (imageUrl?: string, imageSize?: number) => ({
     display: 'inline-block',

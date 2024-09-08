@@ -6,7 +6,7 @@ import { SearchInput } from '../../../shared/ui/search-input';
 import { SuggestedJobs } from '../../../widgets/suggested-jobs';
 import { RecentJobs } from '../../../widgets/recent-jobs';
 import bellIcon from '../images/bell.svg';
-import { useInitDataStore } from '../../../app/stores/init-data.store';
+import { useInitDataStore } from '../../../app/stores/init-data/init-data.store';
 
 export const HomePage: React.FC = () => {
   const user = useInitDataStore((state: any) => state.user);

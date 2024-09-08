@@ -13,7 +13,7 @@ export const styles = stylex.create({
     padding: 9,
     background: '#ffffffbf',
     backdropFilter: 'blur(4px)',
-    zIndex: 100,
+    zIndex: 2,
     borderTop: '0.33px solid #6a6c70',
   },
   iosPadding: {
