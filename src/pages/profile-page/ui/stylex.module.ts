@@ -47,12 +47,9 @@ export const styles = stylex.create({
   },
   logo: (imageUrl: string, size: number) => ({
     display: 'inline-block',
-    height: `${size}px`,
-    width: `${size}px`,
-    background: `url(${imageUrl}) center / contain no-repeat`,
-    border: 'none',
-    flexShrink: 0,
-    outline: 'none',
+    width: imageUrl ? `${size ? size : 20}px` : null,
+    height: imageUrl ? `${size ? size : 20}px` : null,
+    background: `url("${imageUrl}") center / contain no-repeat`,
   }),
   notifText: {
     fontSize: 15,
