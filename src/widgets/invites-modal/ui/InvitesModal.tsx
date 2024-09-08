@@ -1,4 +1,4 @@
-import greenLinkLogo from '../images/link-green.svg';
+import greenLinkLogo from '../images/linkGreen.svg';
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import 'react-spring-bottom-sheet/dist/style.css'

@@ -64,8 +64,6 @@ export const AppRouter: React.FC = () => {
     }, 1500)
   }, [])
 
-
-
   useEffect(() => {
     updateUser({...userRows, photoUrl: AvatarLogo})
     updatePlatform(lp.platform)
