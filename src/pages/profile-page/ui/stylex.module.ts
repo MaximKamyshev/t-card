@@ -51,7 +51,7 @@ export const styles = stylex.create({
     height: size,
     background: `url(${imageUrl}) center / contain no-repeat`,
     border: 'none',
-    flexShrink: 1,
+    flexShrink: 0,
     outline: 'none',
   }),
   notifText: {
