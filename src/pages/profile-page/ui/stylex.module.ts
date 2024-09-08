@@ -44,12 +44,15 @@ export const styles = stylex.create({
     padding: 20,
     margin: '17px 0 0 0',
     alignSelf: 'stretch',
+    display: 'flex',
+    flexDirection: 'column',
   },
   logo: (imageUrl: string, size: number) => ({
     display: 'inline-block',
     width: imageUrl ? `${size ? size : 20}px` : null,
     height: imageUrl ? `${size ? size : 20}px` : null,
     background: `url("${imageUrl}") center / contain no-repeat`,
+    flexShrink: 0,
   }),
   notifText: {
     fontSize: 15,
