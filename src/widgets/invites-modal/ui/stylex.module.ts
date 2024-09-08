@@ -2,11 +2,10 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   logo: (imageUrl: string, size: number) => ({
-    width: size,
     display: 'inline-block',
-    height: size,
-    backgroudndColor: 'transparent',
-    background: `url(${imageUrl}) center / contain no-repeat`,
+    width: imageUrl ? `${size ? size : 20}px` : null,
+    height: imageUrl ? `${size ? size : 20}px` : null,
+    background: `url("${imageUrl}") center / contain no-repeat`,
     border: 'none',
     flexShrink: 0,
     outline: 'none',
