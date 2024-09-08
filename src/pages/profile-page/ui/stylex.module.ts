@@ -46,9 +46,9 @@ export const styles = stylex.create({
     alignSelf: 'stretch',
   },
   logo: (imageUrl: string, size: number) => ({
-    width: size,
     display: 'inline-block',
-    height: size,
+    height: `${size}px`,
+    width: `${size}px`,
     background: `url(${imageUrl}) center / contain no-repeat`,
     border: 'none',
     flexShrink: 0,
