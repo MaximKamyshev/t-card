@@ -6,7 +6,7 @@ import { CustomButton } from "../../../shared/ui/custom-button";
 import checklistLogo from '../images/checklist.svg';
 import linkLogo from '../images/link.svg';
 import { Link } from "react-router-dom";
-import messageNotifLogo from '../images/messageNotif.svg';
+// import messageNotifLogo from '../images/messageNotif.svg';
 import createResumeImage from '../images/createResume.png';
 import { TestVersionText } from "../../../shared/ui/test-version-text/TestVersionText";
 import { useInvitesModalStore } from "../../../app/stores/invites-modal/invites-modal.store";
