@@ -34,7 +34,7 @@ export const ProfilePage: React.FC = () => {
       <p {...stylex.props(styles.description)}>By completing tasks and inviting friends you will receive TLS coins, which can be spent in the Rewards section, and in the future you can use them to pay in the app and participate in airdrop.</p>
       <div {...stylex.props(styles.problemsCardContainer)}>
         <p>sdf</p>
-        <span {...stylex.props(styles.logo(checklistLogo, 24))} />
+        <span {...stylex.props(styles.logo(createResumeImage, 24))} />
         <p {...stylex.props(styles.notifText)}>Have you found a problem with the app or have ideas for improvement?</p>
         <div {...stylex.props(styles.felxBetweenContainer)}>
           <Link {...stylex.props(styles.notifLink)} to="#">Let us know</Link>
