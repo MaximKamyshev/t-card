@@ -4,11 +4,12 @@ import { Switcher } from '../../../shared/ui/switcher';
 import { VacancyCard } from '../../../shared/ui/vacancy-card';
 import { Jobs } from '../../../app/mocks/jobs';
 import { NotFound } from '../../../shared/ui/not-found';
-import gifFire from "../../../app/assets/gifs/fire.gif";
+import flamyLottie from '../../../app/assets/lotties/Flamy.json';
 
 export const BookmarksPage: React.FC = () => {
   const bookmarks = Jobs.filter(job => job.isBookmark)
   const booksmarksSections = ['Vacancies', 'Subscriptions']
+  
   return (
     <>
       <header {...stylex.props(styles.header)}>
@@ -25,7 +26,7 @@ export const BookmarksPage: React.FC = () => {
           </div>
         :
           <div {...stylex.props(styles.notFoundContainer)}>
-            <NotFound title="You Don't have any Bookmarks" description='Add them right now!' gif={gifFire} />
+            <NotFound title="You Don't have any Bookmarks" description='Add them right now!' animationData={flamyLottie} />
           </div>
         }
       </main>

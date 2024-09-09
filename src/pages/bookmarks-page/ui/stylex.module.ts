@@ -23,6 +23,6 @@ export const styles = stylex.create({
     fontSize: 18,
   },
   notFoundContainer: {
-    paddingTop: 73,
+    paddingTop: 105,
   }
 })

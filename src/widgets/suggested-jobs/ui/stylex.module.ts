@@ -30,5 +30,6 @@ export const styles = stylex.create({
     gap: 12,
     overflow: 'auto',
     padding: '11px 15px 23px 15px',
+    margin: '5px 0 0 0',
   }
 })

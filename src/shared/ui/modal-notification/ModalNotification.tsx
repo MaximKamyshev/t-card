@@ -4,7 +4,7 @@ import { styles } from './stylex.module';
 import { ModalNotificationProps } from "./types";
 import closeImage from '../../images/for-modal-notification/close.svg';
 import { useState } from "react";
-import background from '../../images/for-modal-notification/background.png';
+import background from '../../images/for-modal-notification/background.webp';
 
 export const ModalNotification: React.FC<ModalNotificationProps> = ({ title, description, linkText, linkPath }) => {
   const [isHidden, setIsHidden] = useState(false);

@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
-import loadingImage from '../../images/for-loading/loading.png';
-import logoImage from '../../images/for-loading/Logo.svg';
+import loadingImage from '../images/loading.webp';
+import logoImage from '../images/Logo.svg';
 import { LoadingProps } from './types';
 
 export const Loading: React.FC<LoadingProps> = ({ isLoading }) => {

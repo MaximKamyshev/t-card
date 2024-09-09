@@ -5,20 +5,24 @@ import { useInitDataStore } from "../../../app/stores/init-data/init-data.store"
 import { CustomButton } from "../../../shared/ui/custom-button";
 import checklistLogo from "../images/checklist.svg";
 import linkLogo from "../images/link.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import messageNotifLogo from "../images/messageNotif.svg";
-import createResumeImage from "../images/createResume.png";
+import createResumeImage from "../images/createResume.webp";
 import { TestVersionText } from "../../../shared/ui/test-version-text/TestVersionText";
 import { useInvitesModalStore } from "../../../app/stores/invites-modal/invites-modal.store";
 import { InvitesModal } from "../../../widgets/invites-modal";
 
 export const ProfilePage: React.FC = () => {
   const { photoUrl, firstName, lastName } = useInitDataStore((state: any) => state.user);
+  const navigate = useNavigate();
   const updateState = useInvitesModalStore((state: any) => state.updateState);
 
   const handleOpenBottomSheet = () => {
     updateState(true);
   };
+  const handleClickTasks = () => {
+    navigate('/tasks')
+  }
 
   return (
     <main {...stylex.props(styles.container)}>
@@ -27,7 +31,7 @@ export const ProfilePage: React.FC = () => {
       <p {...stylex.props(styles.name)}>{firstName} {lastName}</p>
       <p {...stylex.props(styles.ivites)}>Invited friends: 18</p>
       <div {...stylex.props(styles.buttonsContainer)}>
-        <CustomButton value="Tasks" bgColor="#00A77F" px={15} py={12.5} imageUrl={checklistLogo} imageSize={24} />
+        <CustomButton handlePress={handleClickTasks} value="Tasks" bgColor="#00A77F" px={15} py={12.5} imageUrl={checklistLogo} imageSize={24} />
         <CustomButton handlePress={handleOpenBottomSheet} value="Invite Friend" px={15} py={12.5} imageUrl={linkLogo} imageSize={20.5} />
         <CustomButton value="Rewards" isDisabled={true} bgColor="#0088FF" px={15} py={12.5} />
       </div>

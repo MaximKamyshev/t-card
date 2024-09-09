@@ -13,11 +13,11 @@ export const styles = stylex.create({
   },
   notFoundTitle: {
     fontSize: 20,
-    margin: 0,
+    margin: '19px 0 0 0',
   },
   notFoundDescription: {
     fontSize: 17,
     margin: '4px 0 9px 0',
     color: '#707579'
-  }
+  },
 })

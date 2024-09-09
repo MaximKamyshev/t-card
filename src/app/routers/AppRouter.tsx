@@ -17,8 +17,9 @@ import { VacancyPage } from "../../pages/vacancy-page";
 import { OnboardPage } from "../../pages/onboard-page";
 import { useInitDataStore } from '../stores/init-data/init-data.store';
 import { ProfilePage } from "../../pages/profile-page";
-import AvatarLogo from "../mocks/images/avatar.png";
+import AvatarLogo from "../mocks/images/avatar.webp";
 import { BookmarksPage } from "../../pages/bookmarks-page";
+import { TasksPage } from "../../pages/tasks-page";
 
 const navItems = [
   {
@@ -78,7 +79,7 @@ export const AppRouter: React.FC = () => {
   return (
     <>
       <Loading isLoading={isLoading} />
-      <Router location={location} navigator={reactNavigator}>
+      <Router location={location} navigator={reactNavigator} >
         <Routes>
           <Route path='/home' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
@@ -107,6 +108,12 @@ export const AppRouter: React.FC = () => {
           <Route path='/profile' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <ProfilePage />
+              <NavBar items={navItems} />
+            </div>
+          }/>
+          <Route path='/tasks' element={
+            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
+              <TasksPage />
               <NavBar items={navItems} />
             </div>
           }/>

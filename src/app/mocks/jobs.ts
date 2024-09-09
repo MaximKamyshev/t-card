@@ -1,7 +1,7 @@
-import TMobileLogo from './images/t-mobile.png';
-import TgLogo from './images/tg.png';
-import AppleLogo from './images/apple.png';
-import TCardLogo from './images/t-card.png';
+import TMobileLogo from './images/jobs/t-mobile.webp';
+import TgLogo from './images/jobs/tg.webp';
+import AppleLogo from './images/jobs/apple.webp';
+import TCardLogo from './images/jobs/t-card.webp';
 
 export const Jobs = [
   {
