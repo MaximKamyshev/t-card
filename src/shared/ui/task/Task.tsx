@@ -11,7 +11,7 @@ export const Task: React.FC<TaskProps> = ({ image, titile, reward, isCompleted, 
             <p {...stylex.props(styles.title)}>{titile}</p>
             <p {...stylex.props(styles.reward)}>{reward}</p>
           </div>
-          {isClaimed && <button {...stylex.props(isCompleted ? styles.buttonClaim : styles.button)}>{isCompleted ? 'Claim' : 'Start'}</button>}
+          {!isClaimed && <button {...stylex.props(isCompleted ? styles.buttonClaim : styles.button)}>{isCompleted ? 'Claim' : 'Start'}</button>}
         </div>
     </div>
   )
