@@ -16,6 +16,7 @@ export const NotFound: React.FC<NotFoundProps> = ({ title, description, animatio
   return (
     <div {...stylex.props(styles.notFoundContaier)}>
       <Lottie 
+        isClickToPauseDisabled={true}
         options={defaultOptions}
         height={222}
         width={222}
