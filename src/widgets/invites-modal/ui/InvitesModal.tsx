@@ -1,4 +1,5 @@
 import greenLinkLogo from "../images/linkGreen.svg";
+import close from "../images/close.svg";
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import 'react-spring-bottom-sheet/dist/style.css'
@@ -20,7 +21,10 @@ export const InvitesModal: React.FC = () => {
     <BottomSheet onDismiss={() => updateState(false)} open={isOpen}>
       <section {...stylex.props(platform === 'ios' && styles.iosWrapper)}>
         <div>
-          <p {...stylex.props(styles.bottomSheetTitle)}>Invite Friends</p>
+          <div {...stylex.props(styles.container)}>
+            <p {...stylex.props(styles.bottomSheetTitle)}>Invite Friends</p>
+            <button {...stylex.props(styles.button(close))} onClick={() => updateState(false)} />
+          </div>
           <p {...stylex.props(styles.bottomSheetSubscription)}>Invite your friends and get reward in TLS</p>
         </div>
         <div {...stylex.props(styles.buttonSheetContainer)}>

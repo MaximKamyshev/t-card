@@ -14,7 +14,6 @@ export const styles = stylex.create({
     fontSize: 24,
     fontWeight: 500,
     margin: 0,
-    padding: '0 25px',
   },
   bottomSheetSubscription: {
     fontSize: 16,
@@ -39,5 +38,20 @@ export const styles = stylex.create({
   },
   iosWrapper: {
     padding: '0 0 34px 0',
+  },
+  button: (imageUrl: string) => ({
+    width: 28,
+    height: 28,
+    border: 'none',
+    borderRadius: '50%',
+    background: `#f5f5f5 url("${imageUrl}") center / 12px 12px no-repeat`,
+    cursor: 'pointer',
+    outline: 'none',
+  }),
+  container: {
+    display: 'flex',
+    alignItems: 'start',
+    justifyContent: 'space-between',
+    padding: '0 25px',
   }
 })

@@ -1,4 +1,4 @@
-import { Navigate, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";
@@ -18,6 +18,7 @@ import { OnboardPage } from "../../pages/onboard-page";
 import { useInitDataStore } from '../stores/init-data/init-data.store';
 import { ProfilePage } from "../../pages/profile-page";
 import AvatarLogo from "../mocks/images/avatar.png";
+import { BookmarksPage } from "../../pages/bookmarks-page";
 
 const navItems = [
   {
@@ -28,7 +29,7 @@ const navItems = [
   {
     image: BookmarkLogo,
     subscription: 'Bookmark',
-    path: '/bookmark',
+    path: '/bookmarks',
   },
   {
     image: JobsLogo,
@@ -85,9 +86,9 @@ export const AppRouter: React.FC = () => {
               <NavBar items={navItems} />
             </div>
           }/>
-          <Route path='/bookmark' element={
+          <Route path='/bookmarks' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
-              <HomePage />
+              <BookmarksPage />
               <NavBar items={navItems} />
             </div>
           }/>
