@@ -25,6 +25,7 @@ export const styles = stylex.create({
     color: 'white',
     border: 'none',
     borderRadius: 20,
+    flexShrink: 0,
   },
   buttonClaim: {
     width: 65,
@@ -34,6 +35,7 @@ export const styles = stylex.create({
     color: 'white',
     border: 'none',
     borderRadius: 20,
+    flexShrink: 0,
     background: '#00A77F',
   },
   logo: (imageUrl: string) => ({
