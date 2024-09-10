@@ -16,8 +16,7 @@ export const styles = stylex.create({
   iosPadding: {
     paddingBottom: 49,
   },
-  container: (imageUrl: string) => ({
-    background: `url(${imageUrl}) top / contain no-repeat`,
+  container: {
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
@@ -27,7 +26,7 @@ export const styles = stylex.create({
     boxSizing: 'border-box',
     height: '100vh',
     overflow: 'auto',
-  }),
+  },
   invisible: {
     display: 'none',
   },
@@ -56,12 +55,13 @@ export const styles = stylex.create({
     fontWeight: 500,
     margin: 0,
   }),
-  infoContainer: {
+  infoContainer: (imageUrl: string) => ({
+    background: `url(${imageUrl}) top / contain no-repeat`,
     padding: '0 26px',
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
-  },
+  }),
   infoContainerCenter: {
     padding: '0 26px',
     display: 'flex',

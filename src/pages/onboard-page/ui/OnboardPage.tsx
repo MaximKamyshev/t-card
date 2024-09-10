@@ -61,8 +61,8 @@ export const OnboardPage: React.FC = () => {
           <button onClick={handleClick} {...stylex.props(styles.button)}>{t('thirdSection.button')}</button>
         </div>
       </section>
-      <section {...stylex.props(currentPage === 4 ? styles.container(fourthSectionImage) : styles.invisible, platform === 'ios' && styles.iosPadding)}>
-        <div {...stylex.props(styles.infoContainer)}>
+      <section {...stylex.props(currentPage === 4 ? styles.container : styles.invisible, platform === 'ios' && styles.iosPadding)}>
+        <div {...stylex.props(styles.infoContainer(fourthSectionImage))}>
           <p {...stylex.props(styles.textLeft(310))}><span {...stylex.props(styles.greenText)}>{t('fourthSection.title.color')}</span> {t('fourthSection.title.text')}</p>
           <p {...stylex.props(styles.description('left'))}>{t('fourthSection.description')}</p>
           <p {...stylex.props(styles.importantText)}>{t('fourthSection.notification')}</p>
