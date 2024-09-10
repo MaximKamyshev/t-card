@@ -56,9 +56,7 @@ export const AppRouter: React.FC = () => {
     return initData && initData.user ? initData.user : undefined;
   }, [initData]);
 
-  if (initData?.user) {
-    i18n.changeLanguage('ru')
-  }
+  i18n.changeLanguage('ru')
 
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   postEvent('web_app_set_header_color', {color: '#ffffff'});
