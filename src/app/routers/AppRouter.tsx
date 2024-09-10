@@ -25,7 +25,7 @@ import { Jobs } from "../mocks/jobs";
 import { useTranslation } from "react-i18next";
 
 export const AppRouter: React.FC = () => {
-  const { t, i18n } = useTranslation('translation', { keyPrefix: 'navBar' });
+  const { t } = useTranslation('translation', { keyPrefix: 'navBar' });
   const navItems = [
     {
       image: HomeLogo,
