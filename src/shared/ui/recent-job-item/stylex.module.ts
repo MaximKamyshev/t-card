@@ -26,6 +26,7 @@ export const styles = stylex.create({
     fontSize: 14,
     fontWeight: 300,
     color: '#D9D9D9',
+    textWrap: 'nowrap',
   },
   tagContainer: {
     display: 'flex',

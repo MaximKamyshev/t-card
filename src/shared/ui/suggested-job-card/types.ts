@@ -11,4 +11,5 @@ export interface SuggestedJobCardProps {
   place: string
   tags: string[]
   logo: string
+  id: string
 }

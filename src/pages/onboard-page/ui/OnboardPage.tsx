@@ -8,17 +8,27 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useInitDataStore } from '../../../app/stores/init-data/init-data.store';
 import { TestVersionText } from '../../../shared/ui/test-version-text/TestVersionText';
+import { LanguageModal } from '../../../widgets/language-modal';
+import { useModalStore } from '../../../app/stores/modal/modal.store';
+import { useTranslation } from 'react-i18next';
 
 export const OnboardPage: React.FC = () => {
   const platform = useInitDataStore((state: any) => state.platform);
   const [currentPage, setCurrentPage] = useState(1);
+  const updateIsLanguageModalOpen = useModalStore((state: any) => state.updateIsLanguageModalOpen);
   const navigate = useNavigate()
+  const { t } = useTranslation('translation', { keyPrefix: 'onboardPage' });
 
   const handleClick = () => {
+    updateIsLanguageModalOpen(false);
     setCurrentPage(currentPage + 1);
     if (currentPage === 4) {
       navigate('/home', { replace: true })
     }
+  }
+
+  const handleChooseLanguage = () => {
+    updateIsLanguageModalOpen(true);
   }
 
   return (
@@ -26,48 +36,52 @@ export const OnboardPage: React.FC = () => {
       <section {...stylex.props(currentPage === 1 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.image(firstSectionImage))} />
         <div {...stylex.props(styles.infoContainerCenter)}>
-          <p {...stylex.props(styles.text(310))}>Get your Dream Job! with <span {...stylex.props(styles.greenText)}>T - Card</span></p>
-          <button onClick={handleClick} {...stylex.props(styles.button)}>Let’s Start</button>
+          <p {...stylex.props(styles.text(310))}>{t('firstSectionTitle.text')} <span {...stylex.props(styles.greenText)}>{t('firstSectionTitle.color')}</span></p>
+          <div {...stylex.props(styles.flexContainer)}>
+            <button onClick={handleClick} {...stylex.props(styles.buttonFull)}>{t('startButton')}</button>
+            <button onClick={handleChooseLanguage} {...stylex.props(styles.languageButton)}>{t('languageButton')}</button>
+          </div>
         </div>
+        <LanguageModal />
       </section>
       <section {...stylex.props(currentPage === 2 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.secondImage(secondSectionImage))} />
         <div {...stylex.props(styles.infoContainerCenter)}>
-          <p {...stylex.props(styles.text(310))}>This is a test version of the <span {...stylex.props(styles.greenText)}>T - Card</span></p>
-          <p {...stylex.props(styles.description('center'))}>We want to create a really quality product, so we are releasing this version of the app to get suggestions for improvements and suggestions for the app</p>
-          <button onClick={handleClick} {...stylex.props(styles.button)}>Continue</button>
+          <p {...stylex.props(styles.text(310))}>{t('secondSection.title.text')} <span {...stylex.props(styles.greenText)}>{t('secondSection.title.color')}</span></p>
+          <p {...stylex.props(styles.description('center'))}>{t('secondSection.description')}</p>
+          <button onClick={handleClick} {...stylex.props(styles.button)}>{t('secondSection.button')}</button>
           <TestVersionText />
         </div>
       </section>
       <section {...stylex.props(currentPage === 3 ? styles.fullContainer : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.image(thirdSectionImage))} />
         <div {...stylex.props(styles.infoContainerCenter)}>
-          <p {...stylex.props(styles.text(320))}><span {...stylex.props(styles.greenText)}>Earn coins</span> for activities in the T Card app!</p>
-          <p {...stylex.props(styles.description('center'))}>Exchange your earned coins for premium accounts, free job listings, participate in Airdrop and more!</p>
-          <button onClick={handleClick} {...stylex.props(styles.button)}>Continue</button>
+          <p {...stylex.props(styles.text(380))}><span {...stylex.props(styles.greenText)}>{t('thirdSection.title.color')}</span> {t('thirdSection.title.text')}</p>
+          <p {...stylex.props(styles.description('center'))}>{t('thirdSection.description')}</p>
+          <button onClick={handleClick} {...stylex.props(styles.button)}>{t('thirdSection.button')}</button>
         </div>
       </section>
       <section {...stylex.props(currentPage === 4 ? styles.container(fourthSectionImage) : styles.invisible, platform === 'ios' && styles.iosPadding)}>
         <div {...stylex.props(styles.infoContainer)}>
-          <p {...stylex.props(styles.textLeft(310))}><span {...stylex.props(styles.greenText)}>Features</span> of the Test Version</p>
-          <p {...stylex.props(styles.description('left'))}>The app is still under development, but we are already giving the first users the opportunity to review and give feedback</p>
-          <p {...stylex.props(styles.importantText)}>Important, data about companies other than T-Card is MockData (Fake Data).</p>
-          <p {...stylex.props(styles.listTitle)}>For <span {...stylex.props(styles.greenText)}>Employers</span>:</p>
+          <p {...stylex.props(styles.textLeft(310))}><span {...stylex.props(styles.greenText)}>{t('fourthSection.title.color')}</span> {t('fourthSection.title.text')}</p>
+          <p {...stylex.props(styles.description('left'))}>{t('fourthSection.description')}</p>
+          <p {...stylex.props(styles.importantText)}>{t('fourthSection.notification')}</p>
+          <p {...stylex.props(styles.listTitle)}>{t('fourthSection.for')} <span {...stylex.props(styles.greenText)}>{t('fourthSection.employers')}</span>:</p>
           <ul {...stylex.props(styles.list)}>
-            <li {...stylex.props(styles.description('left'))}>Leave a request to add your company/post your ad to find employees</li>
+            <li {...stylex.props(styles.description('left'))}>{t('fourthSection.employersText')}</li>
           </ul>
-          <p {...stylex.props(styles.listTitle)}>For <span {...stylex.props(styles.greenText)}>Employees</span>:</p>
+          <p {...stylex.props(styles.listTitle)}>{t('fourthSection.for')} <span {...stylex.props(styles.greenText)}>{t('fourthSection.employees')}</span>:</p>
           <ul {...stylex.props(styles.list)}>
-            <li {...stylex.props(styles.description('left'))}>Leave your vacancy for employers</li>
-            <li {...stylex.props(styles.description('left'))}>Respond to existing vacancies from T - Card</li>
+            <li {...stylex.props(styles.description('left'))}>{t('fourthSection.employeesText')}</li>
+            <li {...stylex.props(styles.description('left'))}>{t('fourthSection.employeesText2')}</li>
           </ul>
-          <p {...stylex.props(styles.listTitle)}>For <span {...stylex.props(styles.greenText)}>All</span>:</p>
+          <p {...stylex.props(styles.listTitle)}>{t('fourthSection.for')} <span {...stylex.props(styles.greenText)}>{t('fourthSection.all')}</span>:</p>
           <ul {...stylex.props(styles.list)}>
-            <li {...stylex.props(styles.description('left'))}>Complete tasks and get coins!</li>
-            <li {...stylex.props(styles.description('left'))}><span {...stylex.props(styles.greenText)}>Invite your friends</span> through the referral program!</li>
-            <li {...stylex.props(styles.description('left'))}>Find <span>bugs</span> and <span>improvements</span> for our service - we are open to any suggestions</li>
+            <li {...stylex.props(styles.description('left'))}>{t('fourthSection.allText')}</li>
+            <li {...stylex.props(styles.description('left'))}><span {...stylex.props(styles.greenText)}>{t('fourthSection.allText2.green')}</span> {t('fourthSection.allText2.text')}</li>
+            <li {...stylex.props(styles.description('left'))}>{t('fourthSection.allText3.text')} <span {...stylex.props(styles.greenText)}>{t('fourthSection.allText3.green')}</span> {t('fourthSection.allText3.text2')} <span {...stylex.props(styles.greenText)}>{t('fourthSection.allText3.green2')}</span> {t('fourthSection.allText3.text3')}</li>
           </ul>
-          <button onClick={handleClick} {...stylex.props(styles.button)}>Open</button>
+          <button onClick={handleClick} {...stylex.props(styles.button)}>{t('fourthSection.button')}</button>
         </div>
       </section>
     </main>

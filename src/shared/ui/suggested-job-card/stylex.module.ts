@@ -9,6 +9,7 @@ export const styles = stylex.create({
     display: 'inline-block',
     boxShadow: '0 6px 16px 0 #AEAEAE',
     flexShrink: 0,
+    textDecoration: 'none',
   }),
   bIcon: (secondColor: string, imageUrl: string) => ({
     width: 45,
@@ -58,6 +59,7 @@ export const styles = stylex.create({
     background: `${secondColor}`,
     display: 'inline-block',
     margin: 0,
+    textWrap: 'nowrap',
   }),
   tagsContainer: {
     display: 'flex',

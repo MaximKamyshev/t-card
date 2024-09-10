@@ -1,0 +1,81 @@
+{
+  "homePage": {
+    "suggestedJobs": "Suggested Jobs",
+    "based": "Based on your profile details",
+    "viewAll": "View All",
+    "recentJobs": "Recent Jobs",
+    "modal": {
+      "title": "Join Tools Team!",
+      "description": "Start exploring Telegram in a new, better way",
+      "button": "Leave request"
+    }
+  },
+  "onboardPage": {
+    "startButton": "Let’s Start",
+    "firstSectionTitle": {
+      "text": "Get your Dream Job! with",
+      "color": "T - Card"
+    },
+    "languageButton": "Choose Language",
+    "secondSection": {
+      "title": {
+        "text": "This is a test version of the",
+        "color": "T - Card"
+      },
+      "description": "We want to create a really quality product, so we are releasing this version of the app to get suggestions for improvements and suggestions for the app",
+      "button": "Continue"
+    },
+    "thirdSection": {
+      "title": {
+        "text": "for activities in the T Card app!",
+        "color": "Earn coins"
+      },
+      "description": "Exchange your earned coins for premium accounts, free job listings, participate in Airdrop and more!",
+      "button": "Continue"
+    },
+    "fourthSection": {
+      "title": {
+        "text": "of the Test Version",
+        "color": "Features"
+      },
+      "description": "The app is still under development, but we are already giving the first users the opportunity to review and give feedback",
+      "notification": "Important, data about companies other than T-Card is MockData (Fake Data).",
+      "for": "For",
+      "employers": "Employers",
+      "employersText": "Leave a request to add your company/post your ad to find employees",
+      "employees": "Employees",
+      "employeesText": "Leave your vacancy for employers",
+      "employeesText2": "Respond to existing vacancies from T - Card",
+      "all": "All",
+      "allText": "Complete tasks and get coins!",
+      "allText2": {
+        "text": "through the referral program!",
+        "green": "Invite your friends"
+      },
+      "allText3": {
+        "text": "Find",
+        "green": "bugs",
+        "text2": "and",
+        "green2": "improvements",
+        "text3": "for our service - we are open to any suggestions"
+      },
+      "button": "Open"
+    },
+    "languageText": "Choose Language"
+  },
+  "navBar": {
+    "home": "Home",
+    "bookmarks": "bookmarks",
+    "jobs": "Jobs",
+    "profile": "Profile"
+  },
+  "bookmarksPage": {
+    "title": "Bookmarks",
+    "vacancies": "Vacancies",
+    "subs": "Subscriptions",
+    "notFound": {
+      "text": "You Don't have any Bookmarks",
+      "subscription": "Add them right now!"
+    }
+  }
+}

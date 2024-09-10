@@ -28,7 +28,8 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     gap: 8,
-    padding: '10px 0',
+    padding: '5px 0',
+    flexWrap: 'wrap',
   },
   tag: {
     fontSize: 12,
@@ -37,6 +38,7 @@ export const styles = stylex.create({
     border: '1px solid #f2f1f4',
     display: 'inline-block',
     margin: 0,
+    textWrap: 'nowrap',
   },
   flexInfoContainer: {
     display: 'flex',
@@ -53,6 +55,7 @@ export const styles = stylex.create({
     fontSize: 12,
     color: '#5C5C5C',
     margin: 0,
+    padding: '5px 0',
   },
   respondedPeople: {
     fontSize: 12,

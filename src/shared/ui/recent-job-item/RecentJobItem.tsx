@@ -9,7 +9,7 @@ export const RecentJobItem: React.FC<RecentJobItemProps> = ({ logo, title, tags,
       <div {...stylex.props(styles.textContainer)}>
         <p {...stylex.props(styles.title)}>{title}</p>
         <div {...stylex.props(styles.tagContainer)}>
-          {tags.map((tag, index) => (
+          {tags.slice(0, 3).map((tag, index) => (
             <div {...stylex.props(styles.tagContainer)} key={index}>
               <span {...stylex.props(styles.tag)}>{tag}</span>
               {tags.length - 1 !== index && <span {...stylex.props(styles.tagCircle)} />}

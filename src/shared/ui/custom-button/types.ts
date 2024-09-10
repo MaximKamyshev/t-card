@@ -8,6 +8,7 @@ export interface CustomButtonProps {
   py?: number
   isSoon?: boolean
   isDisabled?: boolean
+  border?: string
   displayVersion?: 'flex' | 'inline-flex'
   imageSize?: number,
   handlePress?: () => void

@@ -9,7 +9,7 @@ export const InfoVacancySection: React.FC<InfoVacancySectionProps> = ({ logo, jo
         <div {...stylex.props(styles.logo(logo !== undefined ? logo : ''))} />
         <div {...stylex.props(styles.flexContainer)}>
           <p {...stylex.props(styles.vacancy)}>{jobTitle}</p>
-          <p {...stylex.props(styles.salaryPrice)}>${salary}<span {...stylex.props(styles.salary)}>/year</span></p>
+          <p {...stylex.props(styles.salaryPrice)}>$ {salary}<span {...stylex.props(styles.salary)}>/year</span></p>
           <p {...stylex.props(styles.respondedPeople)}>Responded: <span {...stylex.props(styles.greenText)}>00</span> people</p>
         </div>
       </div>
@@ -18,7 +18,7 @@ export const InfoVacancySection: React.FC<InfoVacancySectionProps> = ({ logo, jo
           <span {...stylex.props(styles.tag)} key={index}>{tag}</span>
         ))}
       </div>
-      <p {...stylex.props(styles.date)}>Posted on <span ></span></p>
+      <p {...stylex.props(styles.date)}>Posted on Monday, September 2, 2024<span ></span></p>
     </section>
   )
 }

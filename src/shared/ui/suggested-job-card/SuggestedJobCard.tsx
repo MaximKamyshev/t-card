@@ -4,12 +4,13 @@ import { SuggestedJobCardProps } from './types';
 import PinIcon from '../../images/for-suggested-job-card/pin.svg';
 import { Bookmark } from '../bookmark';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ logo, firstColor, secondColor, jobTitle, company, isBookmark, salary, place, tags }) => {
+export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ logo, id, firstColor, secondColor, jobTitle, company, isBookmark, salary, place, tags }) => {
   const [isCheckedBookmark, setIscheckedBookmark] = useState(isBookmark)
 
   return (
-    <article {...stylex.props(styles.card(firstColor))}>
+    <Link to={`/vacancy/${id}`} {...stylex.props(styles.card(firstColor))}>
       <div {...stylex.props(styles.flexContainer)}>
         <div {...stylex.props(styles.bIcon(secondColor, logo))} />
         <div {...stylex.props(styles.infoContainer)}>
@@ -19,7 +20,7 @@ export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ logo, firstC
         <Bookmark activeColor='#FF0000' inActiveColor={secondColor} isChecked={isCheckedBookmark !== undefined ? isCheckedBookmark : false} hadnleBookmark={() => {setIscheckedBookmark(!isCheckedBookmark)}} />
       </div>
       <div {...stylex.props(styles.tagsContainer)}>
-        {tags.map((tag, index) => (
+        {tags.slice(0, 3).map((tag, index) => (
           <p key={index} {...stylex.props(styles.tag(secondColor))}>{tag}</p>
         ))}
       </div>
@@ -30,6 +31,6 @@ export const SuggestedJobCard: React.FC<SuggestedJobCardProps> = ({ logo, firstC
         </div>
         <p {...stylex.props(styles.salary(secondColor))}><span {...stylex.props(styles.salaryPrice)}>${salary}</span>/year</p>
       </div>
-    </article>
+    </Link>
   )
 }

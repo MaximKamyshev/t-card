@@ -20,37 +20,42 @@ import { ProfilePage } from "../../pages/profile-page";
 import AvatarLogo from "../mocks/images/avatar.webp";
 import { BookmarksPage } from "../../pages/bookmarks-page";
 import { TasksPage } from "../../pages/tasks-page";
-
-const navItems = [
-  {
-    image: HomeLogo,
-    subscription: 'Home',
-    path: '/home',
-  },
-  {
-    image: BookmarkLogo,
-    subscription: 'Bookmark',
-    path: '/bookmarks',
-  },
-  {
-    image: JobsLogo,
-    subscription: 'Jobs',
-    path: '/jobs',
-  },
-  {
-    image: ProfileLogo,
-    subscription: 'Profile',
-    path: '/profile',
-  }
-]
+import { useJobsStore } from "../stores/jobs/jobs.store";
+import { Jobs } from "../mocks/jobs";
+import { useTranslation } from "react-i18next";
 
 export const AppRouter: React.FC = () => {
+  const { t, i18n } = useTranslation('translation', { keyPrefix: 'navBar' });
+  const navItems = [
+    {
+      image: HomeLogo,
+      subscription: t('home'),
+      path: '/home',
+    },
+    {
+      image: BookmarkLogo,
+      subscription: t('bookmarks'),
+      path: '/bookmarks',
+    },
+    {
+      image: JobsLogo,
+      subscription: t('jobs'),
+      path: '/jobs',
+    },
+    {
+      image: ProfileLogo,
+      subscription: t('profile'),
+      path: '/profile',
+    }
+  ]  
   const [updateUser, updatePlatform, platform] = useInitDataStore((state: any) => [state.updateUser, state.updatePlatform, state.platform]);
+  const updateJobs = useJobsStore((state: any) => state.updateJobs);
   const initData = useInitData();
   const lp = useLaunchParams();
   const userRows = useMemo(() => {
     return initData && initData.user ? initData.user : undefined;
   }, [initData]);
+  i18n.changeLanguage(userRows?.languageCode)
 
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   postEvent('web_app_set_header_color', {color: '#ffffff'});
@@ -72,6 +77,10 @@ export const AppRouter: React.FC = () => {
   }, [initData, lp])
 
   useEffect(() => {
+    updateJobs(Jobs)
+  }, [Jobs])
+
+  useEffect(() => {
     navigator.attach();
     return () => navigator.detach();
   }, [navigator]);
@@ -79,7 +88,7 @@ export const AppRouter: React.FC = () => {
   return (
     <>
       <Loading isLoading={isLoading} />
-      <Router location={location} navigator={reactNavigator} >
+      <Router location={location} navigator={reactNavigator}>
         <Routes>
           <Route path='/home' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>

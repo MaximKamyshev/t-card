@@ -3,14 +3,16 @@ import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { FilterTag } from "../../../shared/ui/filter-tag";
 import { VacancyCard } from "../../../shared/ui/vacancy-card";
-import { Jobs } from "../../../app/mocks/jobs";
 import { FilterSortButton } from "../../../shared/ui/filter-sort-button";
 import { useInitDataStore } from "../../../app/stores/init-data/init-data.store";
+import { useJobsStore } from "../../../app/stores/jobs/jobs.store";
+import { JobsType } from "../../../app/mocks/types";
 
 const filterTags = ['Full-time', 'Remote', 'Part-time', 'Contract', 'Freelance', 'Internship']
 
 export const JobsPage: React.FC = () => {
   const platform = useInitDataStore((state: any) => state.platform);
+  const jobs = useJobsStore<JobsType[]>((state: any) => state.jobs);
 
   return (
     <>
@@ -29,8 +31,8 @@ export const JobsPage: React.FC = () => {
         <div {...stylex.props(styles.container)}>
           <p {...stylex.props(styles.jobsFoundText)}>312 Jobs Found</p>
           <div {...stylex.props(styles.jobsList)}>
-            {Jobs.map((job, index) => (
-              <VacancyCard key={index} id={job.id} jobTitle={job.jobTitle} company={job.company} salary={job.salary} place={job.place} tags={job.tags} createTime={job.createTime} isBookmark={job.isBookmark} logo={job.logo} />
+            {jobs.map((job, index) => (
+              <VacancyCard jobLogo={job.jobLogo} key={index} id={job.id} jobTitle={job.jobTitle} company={job.company} salary={job.salary} place={job.place} tags={job.tags} createTime={job.createTime} isBookmark={job.isBookmark} logo={job.logo} />
             ))}
           </div>
         </div>

@@ -84,7 +84,7 @@ export const styles = stylex.create({
     paddingLeft: 20,
   },
   importantText: {
-    color: '#CF000A',
+    color: 'black',
     margin: 0,
     marginTop: 15,
   },
@@ -103,9 +103,37 @@ export const styles = stylex.create({
     borderRadius: 15,
     alignSelf: 'center'
   },
+  buttonFull: {
+    outline: 'none',
+    border: 'none',
+    background: '#00A77F',
+    cursor: 'pointer',
+    padding: '12.5px 0',
+    color: 'white',
+    fontSize: 16,
+    borderRadius: 15,
+    alignSelf: 'center',
+  },
   listTitle: {
     fontSize: 24,
     fontWeight: 500,
     margin: 0,
+  },
+  flexContainer: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 9,
+    padding: '0 20px',
+    width: '100vw',
+    boxSizing: 'border-box',
+  },
+  languageButton: {
+    color: '#00A77F',
+    background: 'white',
+    border: '1px solid #F2F2F5',
+    borderRadius: 15,
+    outline: 'none',
+    padding: '12.5px 0',
+    cursor: 'pointer',
   }
 })

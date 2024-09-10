@@ -9,16 +9,16 @@ import { Link, useNavigate } from "react-router-dom";
 import messageNotifLogo from "../images/messageNotif.svg";
 import createResumeImage from "../images/createResume.webp";
 import { TestVersionText } from "../../../shared/ui/test-version-text/TestVersionText";
-import { useInvitesModalStore } from "../../../app/stores/invites-modal/invites-modal.store";
+import { useModalStore } from "../../../app/stores/modal/modal.store";
 import { InvitesModal } from "../../../widgets/invites-modal";
 
 export const ProfilePage: React.FC = () => {
   const { photoUrl, firstName, lastName } = useInitDataStore((state: any) => state.user);
   const navigate = useNavigate();
-  const updateState = useInvitesModalStore((state: any) => state.updateState);
+  const updateIsInviteModalOpen = useModalStore((state: any) => state.updateIsInviteModalOpen);
 
   const handleOpenBottomSheet = () => {
-    updateState(true);
+    updateIsInviteModalOpen(true);
   };
   const handleClickTasks = () => {
     navigate('/tasks')
@@ -33,7 +33,7 @@ export const ProfilePage: React.FC = () => {
       <div {...stylex.props(styles.buttonsContainer)}>
         <CustomButton handlePress={handleClickTasks} value="Tasks" bgColor="#00A77F" px={15} py={12.5} imageUrl={checklistLogo} imageSize={24} />
         <CustomButton handlePress={handleOpenBottomSheet} value="Invite Friend" px={15} py={12.5} imageUrl={linkLogo} imageSize={20.5} />
-        <CustomButton value="Rewards" isDisabled={true} bgColor="#0088FF" px={15} py={12.5} />
+        <CustomButton value="Rewards" isSoon={true} isDisabled={true} bgColor="#0088FF" px={15} py={12.5} />
       </div>
       <p {...stylex.props(styles.description)}>By completing tasks and inviting friends you will receive TLS coins, which can be spent in the Rewards section, and in the future you can use them to pay in the app and participate in airdrop.</p>
       <div {...stylex.props(styles.problemsCardContainer)}>

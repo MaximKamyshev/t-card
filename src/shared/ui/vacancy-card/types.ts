@@ -11,4 +11,5 @@ export interface VacancyCardProps {
   isBookmark?: boolean
   logo: string
   createTime: string
+  jobLogo?: string
 }

@@ -13,5 +13,6 @@ export const styles = stylex.create({
     height: 16,
     margin: '4px 6px',
     padding: 0,
+    display: 'inline-block',
   }),
 })

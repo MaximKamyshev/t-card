@@ -11,6 +11,6 @@ export const Bookmark: React.FC<BookmarkProps> = ({ activeColor, inActiveColor, 
     hadnleBookmark()
   }
   return (
-    <button onClick={handleClick} {...stylex.props(isChecked ? styles.bookmark(activeColor, ActiveBookmarkIcon) : styles.bookmark(inActiveColor, BookmarkIcon))} />
+    <span onClick={handleClick} {...stylex.props(isChecked ? styles.bookmark(activeColor, ActiveBookmarkIcon) : styles.bookmark(inActiveColor, BookmarkIcon))} />
   )
 }

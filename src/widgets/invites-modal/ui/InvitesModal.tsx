@@ -5,12 +5,12 @@ import { styles } from './stylex.module';
 import 'react-spring-bottom-sheet/dist/style.css'
 import { BottomSheet } from 'react-spring-bottom-sheet';
 import { initUtils } from '@telegram-apps/sdk-react';
-import { useInvitesModalStore } from '../../../app/stores/invites-modal/invites-modal.store';
+import { useModalStore } from '../../../app/stores/modal/modal.store';
 import { useInitDataStore } from '../../../app/stores/init-data/init-data.store';
 
 export const InvitesModal: React.FC = () => {
   const utils = initUtils();
-  const [isOpen, updateState] = useInvitesModalStore((state: any) => [state.isOpen, state.updateState]);
+  const [isInviteModalOpen, updateIsInviteModalOpen] = useModalStore((state: any) => [state.isInviteModalOpen, state.updateIsInviteModalOpen]);
   const platform = useInitDataStore((state: any) => state.platform);
 
   const handleInvite = () => {
@@ -18,12 +18,12 @@ export const InvitesModal: React.FC = () => {
   };
   
   return (
-    <BottomSheet onDismiss={() => updateState(false)} open={isOpen}>
+    <BottomSheet onDismiss={() => updateIsInviteModalOpen(false)} open={isInviteModalOpen}>
       <section {...stylex.props(platform === 'ios' && styles.iosWrapper)}>
         <div>
           <div {...stylex.props(styles.container)}>
             <p {...stylex.props(styles.bottomSheetTitle)}>Invite Friends</p>
-            <button {...stylex.props(styles.button(close))} onClick={() => updateState(false)} />
+            <button {...stylex.props(styles.button(close))} onClick={() => updateIsInviteModalOpen(false)} />
           </div>
           <p {...stylex.props(styles.bottomSheetSubscription)}>Invite your friends and get reward in TLS</p>
         </div>
