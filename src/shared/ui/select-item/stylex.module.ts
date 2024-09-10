@@ -17,6 +17,7 @@ export const styles = stylex.create({
   text: {
     margin: 0,
     fontWeight: 300,
+    сolor: 'black',
   },
   circleActive: (imageUrl: string) => ({
     display: 'inline-block',

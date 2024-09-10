@@ -25,6 +25,8 @@ export const styles = stylex.create({
     justifyContent: 'center',
     paddingBottom: 15,
     boxSizing: 'border-box',
+    height: '100vh',
+    overflow: 'auto',
   }),
   invisible: {
     display: 'none',
