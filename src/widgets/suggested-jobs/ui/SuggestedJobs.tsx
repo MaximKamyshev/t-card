@@ -20,7 +20,7 @@ export const SuggestedJobs: React.FC = () => {
         <Link {...stylex.props(styles.link)} to='/Jobs'>{t('viewAll')}</Link>
       </div>
       <div {...stylex.props(styles.list)}>
-        {jobs.map((card) => (
+        {jobs.slice(0, 3).map((card) => (
           <SuggestedJobCard key={card.id} logo={card.logo} id={card.id} firstColor={card.firstColor} secondColor={card.secondColor} jobTitle={card.jobTitle} company={card.company} isBookmark={card.isBookmark} salary={card.salary} place={card.place} tags={card.tags} />
         ))}
       </div>
