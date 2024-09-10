@@ -5,7 +5,7 @@ import { styles } from './stylex.module';
 import { useInitDataStore } from "../../../app/stores/init-data/init-data.store";
 import close from "../../invites-modal/images/close.svg";
 import { SelectItem } from "../../../shared/ui/select-item";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 export const LanguageModal: React.FC = () => {
   const languages = [
@@ -32,7 +32,7 @@ export const LanguageModal: React.FC = () => {
   ]
   const { t, i18n } = useTranslation('translation', { keyPrefix: 'onboardPage' });
   const user = useInitDataStore((state: any) => state.user);
-  const[checkedValue, setCheckedValue] = useState(user.languageCode)
+  const[checkedValue, setCheckedValue] = useState('')
   const [isLanguageModalOpen, updateIsLanguageModalOpen] = useModalStore((state: any) => [state.isLanguageModalOpen, state.updateIsLanguageModalOpen]);
   const platform = useInitDataStore((state: any) => state.platform);
 
@@ -41,6 +41,12 @@ export const LanguageModal: React.FC = () => {
     i18n.changeLanguage(id)
     updateIsLanguageModalOpen(false);
   }
+
+  useEffect(() => {
+    if (user) {
+      setCheckedValue(user.languageCode)
+    }
+  }, [user])
   
   return (
     <BottomSheet onDismiss={() => updateIsLanguageModalOpen(false)} open={isLanguageModalOpen}>
