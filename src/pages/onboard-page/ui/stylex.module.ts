@@ -19,7 +19,6 @@ export const styles = stylex.create({
   container: (imageUrl: string) => ({
     background: `url(${imageUrl}) top / contain no-repeat`,
     backgroundColor: 'white',
-    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

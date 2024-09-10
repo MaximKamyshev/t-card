@@ -55,8 +55,9 @@ export const AppRouter: React.FC = () => {
   const userRows = useMemo(() => {
     return initData && initData.user ? initData.user : undefined;
   }, [initData]);
-  if (userRows) {
-    i18n.changeLanguage(userRows.languageCode)
+
+  if (initData?.user) {
+    i18n.changeLanguage(initData.user.languageCode)
   }
 
   postEvent('web_app_set_background_color', {color: '#ffffff'});
