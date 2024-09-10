@@ -57,7 +57,7 @@ export const styles = stylex.create({
   }),
   infoContainer: (imageUrl: string) => ({
     background: `url(${imageUrl}) top / contain no-repeat`,
-    padding: '0 26px',
+    padding: '20px 26px',
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
