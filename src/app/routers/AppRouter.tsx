@@ -67,7 +67,7 @@ export const AppRouter: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true)
-      i18n.changeLanguage(userRows?.languageCode || 'en')
+      i18n.changeLanguage(userRows?.languageCode)
     }, 1500)
   }, [])
 
