@@ -65,9 +65,9 @@ export const AppRouter: React.FC = () => {
   const [location, reactNavigator] = useIntegration(navigator);
 
   useEffect(() => {
+    i18n.changeLanguage(userRows?.languageCode)
     setTimeout(() => {
       setIsLoading(true)
-      i18n.changeLanguage(userRows?.languageCode)
     }, 1500)
   }, [])
 
