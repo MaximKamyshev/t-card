@@ -25,7 +25,7 @@ import { Jobs } from "../mocks/jobs";
 import { useTranslation } from "react-i18next";
 
 export const AppRouter: React.FC = () => {
-  const { t } = useTranslation('translation', { keyPrefix: 'navBar' });
+  const { t, i18n } = useTranslation('translation', { keyPrefix: 'navBar' });
   const navItems = [
     {
       image: HomeLogo,
@@ -55,7 +55,9 @@ export const AppRouter: React.FC = () => {
   const userRows = useMemo(() => {
     return initData && initData.user ? initData.user : undefined;
   }, [initData]);
-  // i18n.changeLanguage(userRows?.languageCode)
+  if (userRows) {
+    i18n.changeLanguage(userRows.languageCode)
+  }
 
   postEvent('web_app_set_background_color', {color: '#ffffff'});
   postEvent('web_app_set_header_color', {color: '#ffffff'});
