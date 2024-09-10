@@ -56,7 +56,8 @@ export const styles = stylex.create({
     margin: 0,
   }),
   infoContainer: (imageUrl: string) => ({
-    background: `url(${imageUrl}) center / contain no-repeat`,
+    background: `url(${imageUrl}) top / contain no-repeat`,
+    boxSizing: 'border-box',
     padding: '0 26px',
     display: 'flex',
     flexDirection: 'column',
