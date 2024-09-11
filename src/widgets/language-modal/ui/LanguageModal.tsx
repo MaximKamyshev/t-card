@@ -37,7 +37,7 @@ export const LanguageModal: React.FC = () => {
   const [isLanguageModalOpen, updateIsLanguageModalOpen] = useModalStore((state: any) => [state.isLanguageModalOpen, state.updateIsLanguageModalOpen]);
   const platform = useInitDataStore((state: any) => state.platform);
   const cloudStorage = initCloudStorage();
-
+  cloudStorage.set('language', '')
   const handleChangeLanguage = (id: string) => {
     cloudStorage.set('language', id)
     setCheckedValue(id)
