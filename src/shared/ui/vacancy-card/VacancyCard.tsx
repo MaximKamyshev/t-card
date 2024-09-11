@@ -7,7 +7,7 @@ import { Bookmark } from "../bookmark";
 import { Link } from "react-router-dom";
 import { useJobsStore } from "../../../app/stores/jobs/jobs.store";
 
-export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company, salary, place, tags, createTime, isBookmark, logo, jobLogo }) => {
+export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company, salary, place, tags, createAt, isBookmark, jobLogo }) => {
   const [jobs, bookmarkJob] = useJobsStore((state: any) => [state.jobs, state.bookmarkJob]);
 
   const handleCliclkBookmark = () => {
@@ -18,7 +18,7 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company,
     <Link to={`/vacancy/${id}`} {...stylex.props(styles.card)}>
       <div {...stylex.props(styles.flexContainerJustifyBetween)}>
         <div {...stylex.props(styles.flexInfoContainer, styles.flexGrow)}>
-          <div {...stylex.props(styles.logo(logo))} />
+          <div {...stylex.props(styles.logo(company.logo))} />
           <div {...stylex.props(styles.flexGrow)}>
             <div {...stylex.props(styles.flexContainerJustifyBetweenStart, styles.TextSectionWrapper)}>
               <div>
@@ -28,11 +28,11 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ id, jobTitle, company,
                 </div>
                 <div {...stylex.props(styles.companyContainer)}>
                   <p {...stylex.props(styles.companyName)}>{company.name}</p>
-                  {company.isConfirm && <div {...stylex.props(styles.confirmLogo(ConfirmLogo))} />}
+                  {company.isVerified && <div {...stylex.props(styles.confirmLogo(ConfirmLogo))} />}
                 </div>
               </div>
               <div {...stylex.props(styles.bookmarkContainer)}>
-                <p {...stylex.props(styles.createTime)}>{createTime} ago</p>
+                <p {...stylex.props(styles.createTime)}>{createAt} ago</p>
                 <Bookmark activeColor='#FF0000' inActiveColor='#000000' isChecked={isBookmark !== undefined ? isBookmark : false} hadnleBookmark={handleCliclkBookmark} />
               </div>
             </div>

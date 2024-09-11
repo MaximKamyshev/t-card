@@ -21,7 +21,7 @@ export const SuggestedJobs: React.FC = () => {
       </div>
       <div {...stylex.props(styles.list)}>
         {jobs.slice(0, 3).map((card) => (
-          <SuggestedJobCard key={card.id} logo={card.logo} id={card.id} firstColor={card.firstColor} secondColor={card.secondColor} jobTitle={card.jobTitle} company={card.company} isBookmark={card.isBookmark} salary={card.salary} place={card.place} tags={card.tags} />
+          <SuggestedJobCard key={card.id} jobLogo={card.jobLogo} id={card.id} firstColor={card.firstColor} secondColor={card.secondColor} jobTitle={card.jobTitle} company={card.company} isBookmark={card.isBookmark} salary={card.salary} place={card.place} tags={card.tags} />
         ))}
       </div>
     </section>

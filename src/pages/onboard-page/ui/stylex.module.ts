@@ -9,7 +9,7 @@ export const styles = stylex.create({
     height: '100vh',
     width: '100%',
     gap: 15,
-    paddingBottom: 15,
+    paddingBottom: 56,
     boxSizing: 'border-box',
     background: 'white',
   },
@@ -20,10 +20,8 @@ export const styles = stylex.create({
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 15,
     boxSizing: 'border-box',
+    padding: '26px 0',
     height: '100vh',
     overflow: 'auto',
   },
@@ -33,7 +31,10 @@ export const styles = stylex.create({
   image: (imageUrl: string) => ({
     width: '100%',
     flex: '1 0 auto',
-    background: `url(${imageUrl}) center / cover no-repeat`,
+    background: `url(${imageUrl}) center / contain no-repeat`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }),
   secondImage: (imageUrl: string) => ({
     width: '100%',
@@ -137,5 +138,6 @@ export const styles = stylex.create({
     outline: 'none',
     padding: '12.5px 0',
     cursor: 'pointer',
+    fontSize: 16,
   }
 })

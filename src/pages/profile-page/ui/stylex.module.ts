@@ -31,6 +31,14 @@ export const styles = stylex.create({
     fontSize: 14,
     margin: 0,
   },
+  role: (bgColor: string) => ({
+    fontSize: 14,
+    margin: 0,
+    background: bgColor,
+    padding: '10px 15px',
+    borderRadius: 12,
+    color: 'white'
+  }),
   description: {
     fontSize: 15,
     fontWeight: 300,
@@ -74,6 +82,7 @@ export const styles = stylex.create({
     margin: 0,
   },
   felxBetweenContainer: {
+    alignSelf: 'stretch',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

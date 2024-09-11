@@ -28,8 +28,9 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     gap: 8,
-    padding: '5px 0',
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
+    overflow: 'auto',
+    padding: '5px 15px',
   },
   tag: {
     fontSize: 12,
@@ -44,7 +45,7 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'end',
     gap: 15,
-    padding: '22px 0 5px 0',
+    padding: '22px 15px 5px 15px',
   },
   flexContainer: {
     display: 'flex',
@@ -55,7 +56,7 @@ export const styles = stylex.create({
     fontSize: 12,
     color: '#5C5C5C',
     margin: 0,
-    padding: '5px 0',
+    padding: '5px 15px',
   },
   respondedPeople: {
     fontSize: 12,

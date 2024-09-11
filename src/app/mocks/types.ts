@@ -1,30 +1,53 @@
 export interface JobsType {
   id: string
   jobTitle: string
-  company: {
-    name: string
-    isConfirm: boolean
-  }
   firstColor: string
   secondColor: string
   isBookmark: boolean
   salary: string
   place: string
   tags: string[]
-  logo: string
-  createTime: string
+  createAt: string
   jobLogo?: string
-  stacks?: {name: string, logo: string}[]
+  stacks?: StacksType[]
   description: {
     tasks: contentType[],
     requirements: contentType[]
     experience: contentType[]
     plus: contentType[]
   } | null
+  company: CompaniesType
 }
 
 interface contentType {
   type: 'list' | 'text'
   content: string
   color?: string
+}
+
+interface CompaniesType {
+  logo: string
+  id: string
+  name: string
+  isVerified: boolean
+  description: {
+    tasks: contentType[]
+  } | null
+  social?: 
+    {
+      text: string
+      value: string
+      type: 'link' | 'tel'
+    }[]
+}
+
+interface TagsType {
+  id: string
+  name: string
+}
+
+interface StacksType {
+  id: string
+  name: string
+  logo: string
 }

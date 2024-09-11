@@ -3,13 +3,13 @@ export interface VacancyCardProps {
   jobTitle: string
   company: {
     name: string
-    isConfirm: boolean
+    isVerified: boolean
+    logo: string
   }
   salary: string
   place: string
   tags: string[]
   isBookmark?: boolean
-  logo: string
-  createTime: string
+  createAt: string
   jobLogo?: string
 }

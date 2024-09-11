@@ -23,6 +23,8 @@ import { TasksPage } from "../../pages/tasks-page";
 import { useJobsStore } from "../stores/jobs/jobs.store";
 import { Jobs } from "../mocks/jobs";
 import { useTranslation } from "react-i18next";
+import { EmployeePage } from "../../pages/employee-page";
+import { useModalStore } from "../stores/modal/modal.store";
 
 export const AppRouter: React.FC = () => {
   const { t, i18n } = useTranslation('translation', { keyPrefix: 'navBar' });
@@ -49,27 +51,31 @@ export const AppRouter: React.FC = () => {
     }
   ]  
   const [updateUser, updatePlatform, platform] = useInitDataStore((state: any) => [state.updateUser, state.updatePlatform, state.platform]);
+  const updateIsPresentModalOpen = useModalStore((state: any) => state.updateIsPresentModalOpen);
   const updateJobs = useJobsStore((state: any) => state.updateJobs);
   const initData = useInitData();
   const lp = useLaunchParams();
   const userRows = useMemo(() => {
     return initData && initData.user ? initData.user : undefined;
   }, [initData]);
-
-  postEvent('web_app_set_background_color', {color: '#ffffff'});
-  postEvent('web_app_set_header_color', {color: '#ffffff'});
   const [isLoading, setIsLoading] = useState(false);
   const [swipeBehavior] = initSwipeBehavior();
-  swipeBehavior.disableVerticalSwipe();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
 
   useEffect(() => {
     i18n.changeLanguage(userRows?.languageCode)
+    swipeBehavior.disableVerticalSwipe();
+    postEvent('web_app_set_background_color', {color: '#ffffff'});
+    postEvent('web_app_set_header_color', {color: '#ffffff'});
     setTimeout(() => {
       setIsLoading(true)
     }, 1500)
   }, [])
+
+  useEffect(() => {
+    isLoading && updateIsPresentModalOpen(true)
+  }, [isLoading])
 
   useEffect(() => {
     updateUser({...userRows, photoUrl: AvatarLogo})
@@ -109,8 +115,14 @@ export const AppRouter: React.FC = () => {
             </div>
           }/>
           <Route path='/vacancy/:slug' element={
-            <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
+            <div id="vacancy" {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
               <VacancyPage />
+              <NavBar items={navItems} />
+            </div>
+          }/>
+          <Route path='/employee/:slug' element={
+            <div id="vacancy" {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
+              <EmployeePage />
               <NavBar items={navItems} />
             </div>
           }/>

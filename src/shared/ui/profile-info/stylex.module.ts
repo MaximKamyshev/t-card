@@ -16,5 +16,5 @@ export const styles = stylex.create({
     fontSize: 22,
     fontWeight: 500,
     margin: 0,
-  }
+  },
 })

@@ -7,6 +7,8 @@ import { SuggestedJobs } from '../../../widgets/suggested-jobs';
 import { RecentJobs } from '../../../widgets/recent-jobs';
 import bellIcon from '../images/bell.svg';
 import { useInitDataStore } from '../../../app/stores/init-data/init-data.store';
+import { Popup } from '../../../widgets/popup';
+import congratulationsBananaLottie from '../../../app/assets/lotties/congratulations-banana.json';
 
 export const HomePage: React.FC = () => {
   const user = useInitDataStore((state: any) => state.user);
@@ -24,6 +26,7 @@ export const HomePage: React.FC = () => {
         <SuggestedJobs />
         <RecentJobs />
       </main>
+      <Popup isCloseButton={false} modalName='isPresentModalOpen' methodName='updateIsPresentModalOpen' animationData={congratulationsBananaLottie} text='Welcome to T - Card!' subscription='Get a welcome bonus of 2000 TLS!' buttonText='Claim'/>
     </div>
   )
 }

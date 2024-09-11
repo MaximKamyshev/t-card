@@ -31,6 +31,10 @@ export const styles = stylex.create({
     fontSize: 18,
     fontWeight: 500,
     margin: 0,
+    maxWidth: 150,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    textWrap: 'nowrap',
   },
   companyName: {
     fontSize: 14,
@@ -60,13 +64,14 @@ export const styles = stylex.create({
     display: 'inline-block',
     margin: 0,
     textWrap: 'nowrap',
+    textAlign: 'center',
   }),
   tagsContainer: {
-    display: 'flex',
-    alignItems: 'center',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
     gap: 7,
     padding: '10px 0',
-    margin: '7px 0 0 0'
+    margin: '7px 0 0 0',
   },
   city: (secondColor: string) => ({
     fontSize: 14,
@@ -97,5 +102,20 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  flexInfoContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  jobLogo: (imageUrl: string) => ({
+    width: 20,
+    height: 20,
+    background: `url("${imageUrl}") center / contain no-repeat`,
+    flexShrink: 0,
+  }),
+  jobNameContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 5,
   }
 })

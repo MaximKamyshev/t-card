@@ -21,7 +21,7 @@ export const RecentJobs: React.FC = () => {
         <ModalNotification title={t('modal.title')} description={t('modal.description')} linkText={t('modal.button')} linkPath="#" />
         <div {...stylex.props(styles.jobsList)}>
           {jobs.slice(0, 4).map((job, index) => (
-            <RecentJobItem key={index} logo={job.logo} title={job.jobTitle} tags={job.tags} />
+            <RecentJobItem key={index} logo={job.company.logo} title={job.jobTitle} tags={job.tags} />
           ))}
         </div>
       </div>

@@ -1,0 +1,1 @@
+export { DescriptionCompanySection } from "./ui/DescriptionCompanySection";

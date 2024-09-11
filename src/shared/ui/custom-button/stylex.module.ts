@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
-  button: (bgColor?: string, border?: string, imageUrl?: string, textColor?: string, textSize?: number, px?: number, py?: number, displayVersion?: 'flex' | 'inline-flex') => ({
+  button: (logoGap?: number, bgColor?: string, imagePosition?: 'right' | 'left', border?: string, imageUrl?: string, textColor?: string, textSize?: number, px?: number, py?: number, displayVersion?: 'flex' | 'inline-flex') => ({
     backgroundColor: bgColor ? bgColor : 'black',
     borderRadius: 15,
     color: textColor ? textColor : 'white',
@@ -12,13 +12,14 @@ export const styles = stylex.create({
     display: displayVersion ? displayVersion : 'inline-flex',
     fontSize: textSize ? textSize : 16,
     alignItems: 'center',
-    gap: imageUrl ? 3 : 0,
+    gap: imageUrl ? logoGap ? logoGap : 3 : 0,
     padding: `${py ? py : 10}px ${px ? px : 20}px`,
     textWrap: 'nowrap',
     position: 'relative',
     flex: '1 0 auto',
     justifyContent: 'center',
     border: border ? `${border}` : 'none',
+    flexDirection: imagePosition === 'left' ? 'row-reverse' : 'row',
   }),
   logo: (imageUrl?: string, imageSize?: number) => ({
     display: 'inline-block',
@@ -26,7 +27,7 @@ export const styles = stylex.create({
     height: imageUrl ? `${imageSize ? imageSize : 20}px` : null,
     background: `url("${imageUrl}") center / contain no-repeat`,
   }),
-  soon: {
+  soon: (scale?: string) => ({
     position: 'absolute',
     background: 'white',
     color: 'black',
@@ -41,6 +42,6 @@ export const styles = stylex.create({
     boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
     right: '0',
     top: '0',
-    transform: 'translate(20%, -60%) rotate(15deg)',
-  }
+    transform: `translate(20%, -60%) rotate(15deg) scale(${scale ? scale : 1})`,
+  })
 })

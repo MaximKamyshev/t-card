@@ -10,6 +10,9 @@ export interface CustomButtonProps {
   isDisabled?: boolean
   border?: string
   displayVersion?: 'flex' | 'inline-flex'
-  imageSize?: number,
+  imageSize?: number
   handlePress?: () => void
+  scaleSoon?: string
+  imagePosition?: 'right' | 'left'
+  logoGap?: number
 }

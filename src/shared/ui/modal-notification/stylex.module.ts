@@ -11,6 +11,12 @@ export const styles = stylex.create({
     borderRadius: 12,
     background: `url("${imageUrl}") center / cover no-repeat`,
   }),
+  logo: (imageUrl: string, size: number) => ({
+    background: `url("${imageUrl}") center / contain no-repeat`,
+    width: size,
+    height: size,
+    display: 'inline-block',
+  }),
   title: {
     fontSize: 17,
     fontWeight: 500,
@@ -24,6 +30,7 @@ export const styles = stylex.create({
     fontFamily: 'Sf-pro-display',
     margin: '2px 0 0 0',
     color: '#ffffffcc',
+    maxWidth: 300,
   },
   link: {
     fontSize: 15,
@@ -43,5 +50,21 @@ export const styles = stylex.create({
     width: 12,
     height: 12,
     margin: 8,
-  })
+  }),
+  confirmContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 4,
+  },
+  flexContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'start',
+  },
+  rating: {
+    margin: '2px 0 0 0',
+    fontSize: 13,
+    color: '#707579',
+    fomtFamily: 'Sf-pro-display',
+  }
 })

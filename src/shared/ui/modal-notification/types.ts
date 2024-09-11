@@ -3,4 +3,6 @@ export interface ModalNotificationProps {
   description: string
   linkText: string
   linkPath: string
+  isConfirm?: boolean
+  isRating?: boolean
 }

@@ -13,7 +13,7 @@ import { useModalStore } from "../../../app/stores/modal/modal.store";
 import { InvitesModal } from "../../../widgets/invites-modal";
 
 export const ProfilePage: React.FC = () => {
-  const { photoUrl, firstName, lastName } = useInitDataStore((state: any) => state.user);
+  const [{ photoUrl, firstName, lastName }, role] = useInitDataStore((state: any) => [state.user, state.role]);
   const navigate = useNavigate();
   const updateIsInviteModalOpen = useModalStore((state: any) => state.updateIsInviteModalOpen);
 
@@ -28,8 +28,13 @@ export const ProfilePage: React.FC = () => {
     <main {...stylex.props(styles.container)}>
       <p {...stylex.props(styles.points)}><span {...stylex.props(styles.greenText)}>1,893</span> $TLS</p>
       <Avatar image={photoUrl} size={130} inviteProcent={20} tasksProcent={50} rewardsProcent={30} />
-      <p {...stylex.props(styles.name)}>{firstName} {lastName}</p>
-      <p {...stylex.props(styles.ivites)}>Invited friends: 18</p>
+      <div {...stylex.props(styles.felxBetweenContainer)}>
+        <div>
+          <p {...stylex.props(styles.name)}>{firstName} {lastName}</p>
+          <p {...stylex.props(styles.ivites)}>Invited friends: 18</p>
+        </div>
+        <span {...stylex.props(styles.role(role === 'employer' ? '#A70003' : '#00A77F'))}>{role === 'employer' ? 'Employeer' : 'Employee'}</span>
+      </div>
       <div {...stylex.props(styles.buttonsContainer)}>
         <CustomButton handlePress={handleClickTasks} value="Tasks" bgColor="#00A77F" px={15} py={12.5} imageUrl={checklistLogo} imageSize={24} />
         <CustomButton handlePress={handleOpenBottomSheet} value="Invite Friend" px={15} py={12.5} imageUrl={linkLogo} imageSize={20.5} />
