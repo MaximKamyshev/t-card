@@ -52,6 +52,7 @@ export const LanguageModal: React.FC = () => {
           setCheckedValue(value)
         })
         .catch(() => {
+          setCheckedValue('es')
           setCheckedValue(user.languageCode)
         })
     }
