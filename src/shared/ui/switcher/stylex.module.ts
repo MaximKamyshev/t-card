@@ -18,6 +18,7 @@ export const styles = stylex.create({
     background: 'transparent',
     border: 'none',
     outline: 'none',
+    display: 'block',
   },
   buttonActive: {
     background: 'white',

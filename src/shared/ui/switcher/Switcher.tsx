@@ -13,7 +13,7 @@ export const Switcher: React.FC<SwitcherProps> = ({ items }) => {
   return (
     <div {...stylex.props(styles.container)}>
       {items.map((item, index) => (
-        <button onClick={() => handleClick(item)} {...stylex.props(styles.button, currentSection.toLowerCase() === item.toLowerCase() && styles.buttonActive)} key={index}>{item}</button>
+        <span onClick={() => handleClick(item)} {...stylex.props(styles.button, currentSection.toLowerCase() === item.toLowerCase() && styles.buttonActive)} key={index}>{item}</span>
       ))}
     </div>
   )
