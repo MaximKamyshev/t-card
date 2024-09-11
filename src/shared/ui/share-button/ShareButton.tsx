@@ -6,9 +6,9 @@ import { initUtils } from '@telegram-apps/sdk-react';
 export const ShareButton: React.FC<ShareButtonProps> = ({ text, id }) => {
   const utils = initUtils();
   const handleClick = () => {
-    utils.shareURL(`https://t.me/test1X_bot/Tcard?startapp=company!${id}`, text);
+    utils.shareURL(`https://t.me/test1X_bot/Tcard?startapp=company=${id}`, text);
   }
-  
+
   return (
     <button onClick={handleClick} {...stylex.props(styles.container(ShareLogo))}></button>
   )
