@@ -37,7 +37,7 @@ export const OnboardPage: React.FC = () => {
     setCurrentPage(currentPage + 1);
     if (currentPage === 5) {
       if (initData?.startParam?.split('=')[0] === 'company') {
-        navigate(`/employee/${initData?.startParam?.split('!')[1]}`)
+        navigate(`/employee/${initData?.startParam?.split('=')[1]}`)
       }
       else {
         navigate('/home', { replace: true })
@@ -50,7 +50,7 @@ export const OnboardPage: React.FC = () => {
     setCurrentPage(currentPage + 1);
     if (currentPage === 5) {
       if (initData?.startParam?.split('=')[0] === 'company') {
-        navigate(`/employee/${initData?.startParam?.split('!')[1]}`)
+        navigate(`/employee/${initData?.startParam?.split('=')[1]}`)
       }
       else {
         navigate('/home', { replace: true })

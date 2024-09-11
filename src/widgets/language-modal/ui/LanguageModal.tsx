@@ -7,6 +7,7 @@ import close from "../../invites-modal/images/close.svg";
 import { SelectItem } from "../../../shared/ui/select-item";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { initCloudStorage } from "@telegram-apps/sdk-react";
 export const LanguageModal: React.FC = () => {
   const languages = [
     {
@@ -35,8 +36,10 @@ export const LanguageModal: React.FC = () => {
   const[checkedValue, setCheckedValue] = useState('')
   const [isLanguageModalOpen, updateIsLanguageModalOpen] = useModalStore((state: any) => [state.isLanguageModalOpen, state.updateIsLanguageModalOpen]);
   const platform = useInitDataStore((state: any) => state.platform);
+  const cloudStorage = initCloudStorage();
 
   const handleChangeLanguage = (id: string) => {
+    cloudStorage.set('language', id)
     setCheckedValue(id)
     i18n.changeLanguage(id)
     updateIsLanguageModalOpen(false);

@@ -8,7 +8,7 @@ import JobsLogo from '../../shared/images/for-button-with-subscription/jobsLogo.
 import ProfileLogo from '../../shared/images/for-button-with-subscription/profileLogo.svg';
 import { Loading } from "../../widgets/loading";
 import { postEvent } from "@telegram-apps/sdk";
-import { initNavigator, initSwipeBehavior, useInitData, useLaunchParams } from "@telegram-apps/sdk-react";
+import { initCloudStorage, initNavigator, initSwipeBehavior, useInitData, useLaunchParams } from "@telegram-apps/sdk-react";
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { useEffect, useMemo, useState } from "react";
@@ -62,9 +62,16 @@ export const AppRouter: React.FC = () => {
   const [swipeBehavior] = initSwipeBehavior();
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
+  const cloudStorage = initCloudStorage();
 
   useEffect(() => {
-    i18n.changeLanguage(userRows?.languageCode)
+    cloudStorage.get('language')
+      .then((value) => {
+        i18n.changeLanguage(value)
+      })
+      .catch(() => {
+        i18n.changeLanguage(userRows?.languageCode)
+      })
     swipeBehavior.disableVerticalSwipe();
     postEvent('web_app_set_background_color', {color: '#ffffff'});
     postEvent('web_app_set_header_color', {color: '#ffffff'});
@@ -74,7 +81,11 @@ export const AppRouter: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    isLoading && updateIsPresentModalOpen(true)
+    cloudStorage.get('isClaimed')
+      .then()
+      .catch(() => {
+        isLoading && updateIsPresentModalOpen(true)
+      })
   }, [isLoading])
 
   useEffect(() => {
