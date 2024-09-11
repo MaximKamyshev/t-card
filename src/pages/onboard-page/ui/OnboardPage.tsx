@@ -36,7 +36,7 @@ export const OnboardPage: React.FC = () => {
     updateIsLanguageModalOpen(false);
     setCurrentPage(currentPage + 1);
     if (currentPage === 5) {
-      if (initData?.startParam?.split('!')[0] === 'company') {
+      if (initData?.startParam?.split('=')[0] === 'company') {
         navigate(`/employee/${initData?.startParam?.split('!')[1]}`)
       }
       else {
@@ -49,7 +49,7 @@ export const OnboardPage: React.FC = () => {
     updateRole(value)
     setCurrentPage(currentPage + 1);
     if (currentPage === 5) {
-      if (initData?.startParam?.split('!')[0] === 'company') {
+      if (initData?.startParam?.split('=')[0] === 'company') {
         navigate(`/employee/${initData?.startParam?.split('!')[1]}`)
       }
       else {
@@ -70,7 +70,7 @@ export const OnboardPage: React.FC = () => {
         <div {...stylex.props(styles.infoContainerCenter)}>
           <p {...stylex.props(styles.text(310))}>{t('firstSectionTitle.text')} <span {...stylex.props(styles.greenText)}>{t('firstSectionTitle.color')}</span></p>
           <div {...stylex.props(styles.flexContainer)}>
-            <button onClick={handleClick} {...stylex.props(styles.buttonFull)}>{initData?.startParam?.toString()}</button>
+            <button onClick={handleClick} {...stylex.props(styles.buttonFull)}>{t('startButton')}</button>
             <button onClick={handleChooseLanguage} {...stylex.props(styles.languageButton)}>{t('languageButton')}</button>
           </div>
         </div>
