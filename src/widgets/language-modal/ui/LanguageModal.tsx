@@ -61,7 +61,7 @@ export const LanguageModal: React.FC = () => {
     <BottomSheet onDismiss={() => updateIsLanguageModalOpen(false)} open={isLanguageModalOpen}>
       <section {...stylex.props(platform === 'ios' && styles.iosWrapper)}>
         <div {...stylex.props(styles.container)}>
-          <p {...stylex.props(styles.bottomSheetTitle)}>user.languageCode</p>
+          <p {...stylex.props(styles.bottomSheetTitle)}>{user.languageCode}</p>
           <button {...stylex.props(styles.button(close))} onClick={() => updateIsLanguageModalOpen(false)} />
         </div>
         <div {...stylex.props(styles.listContainer)}>
