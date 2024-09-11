@@ -87,8 +87,6 @@ export const AppRouter: React.FC = () => {
           updateIsPresentModalOpen(true)
         }
       })
-      .catch(() => {
-      })
   }, [isLoading])
 
   useEffect(() => {
