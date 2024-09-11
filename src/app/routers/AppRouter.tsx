@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
+import { Navigate, Route, Router, Routes } from "react-router-dom";
 import { HomePage } from "../../pages/home-page";
 import { JobsPage } from "../../pages/jobs-page";
 import { NavBar } from "../../widgets/nav-bar";
@@ -72,7 +72,7 @@ export const AppRouter: React.FC = () => {
       .catch(() => {
         i18n.changeLanguage(userRows?.languageCode)
       })
-    // swipeBehavior.disableVerticalSwipe();
+    swipeBehavior.disableVerticalSwipe();
     postEvent('web_app_set_background_color', {color: '#ffffff'});
     postEvent('web_app_set_header_color', {color: '#ffffff'});
     setTimeout(() => {
@@ -98,15 +98,15 @@ export const AppRouter: React.FC = () => {
     updateJobs(Jobs)
   }, [Jobs])
 
-  // useEffect(() => {
-  //   navigator.attach();
-  //   return () => navigator.detach();
-  // }, [navigator]);
+  useEffect(() => {
+    navigator.attach();
+    return () => navigator.detach();
+  }, [navigator]);
 
   return (
     <>
       <Loading isLoading={isLoading} />
-      <BrowserRouter>
+      <Router location={location} navigator={reactNavigator}>
         <Routes>
           <Route path='/home' element={
             <div {...stylex.props(styles.wrapper, platform === 'ios' && styles.iosPadding)}>
@@ -155,7 +155,7 @@ export const AppRouter: React.FC = () => {
             <Navigate to='/home' />
           }/>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   )
 }
