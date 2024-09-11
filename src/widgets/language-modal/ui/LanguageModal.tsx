@@ -51,7 +51,10 @@ export const LanguageModal: React.FC = () => {
           if (value) {
             setCheckedValue(user.languageCode)
           }
-          setCheckedValue(value)
+          else {
+            setCheckedValue(value)
+          }
+
         })
       
     }
