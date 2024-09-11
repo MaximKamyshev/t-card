@@ -13,6 +13,7 @@ export const styles = stylex.create({
     cursor: 'pointer',
     outline: 'none',
     width: '100%',
+    boxSizing: 'border-box',
     сolor: 'black',
   },
   text: {
