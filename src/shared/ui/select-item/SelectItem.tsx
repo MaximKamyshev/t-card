@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 import { styles } from './stylex.module';
 import { SelectItemProps } from './types';
-import checkLogo from '../../images/for-select-item/check.svg';
+import checkLogo from "../../images/for-select-item/check.svg";
 
 export const SelectItem: React.FC<SelectItemProps> = ({ text, checked, disabled, handlePress }) => {
 
