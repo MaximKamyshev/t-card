@@ -32,7 +32,7 @@ export const JobsPage: React.FC = () => {
           <p {...stylex.props(styles.jobsFoundText)}>312 Jobs Found</p>
           <div {...stylex.props(styles.jobsList)}>
             {jobs.map((job, index) => (
-              <VacancyCard jobLogo={job.jobLogo} key={index} id={job.id} jobTitle={job.jobTitle} company={job.company} salary={job.salary} place={job.place} tags={job.tags} createTime={job.createTime} isBookmark={job.isBookmark} logo={job.logo} />
+              <VacancyCard jobLogo={job.jobLogo} key={index} id={job.id} jobTitle={job.jobTitle} createAt={job.createAt} company={job.company} salary={job.salary} place={job.place} tags={job.tags} isBookmark={job.isBookmark} />
             ))}
           </div>
         </div>

@@ -41,11 +41,6 @@ interface CompaniesType {
     }[]
 }
 
-interface TagsType {
-  id: string
-  name: string
-}
-
 interface StacksType {
   id: string
   name: string
