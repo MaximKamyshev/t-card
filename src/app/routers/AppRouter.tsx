@@ -84,7 +84,7 @@ export const AppRouter: React.FC = () => {
     isLoading && cloudStorage.get('isClaimed')
       .then((value) => {
         if (value === 'true') {
-          updateIsPresentModalOpen(true)
+          
         }
         else {
           updateIsPresentModalOpen(true)
