@@ -31,13 +31,12 @@ export const LanguageModal: React.FC = () => {
       disabled: true
     }
   ]
-  const { i18n } = useTranslation('translation', { keyPrefix: 'onboardPage' });
+  const { t, i18n } = useTranslation('translation', { keyPrefix: 'onboardPage' });
   const user = useInitDataStore((state: any) => state.user);
-  const[checkedValue, setCheckedValue] = useState('en')
+  const[checkedValue, setCheckedValue] = useState('')
   const [isLanguageModalOpen, updateIsLanguageModalOpen] = useModalStore((state: any) => [state.isLanguageModalOpen, state.updateIsLanguageModalOpen]);
   const platform = useInitDataStore((state: any) => state.platform);
   const cloudStorage = initCloudStorage();
-  cloudStorage.delete('language')
   const handleChangeLanguage = (id: string) => {
     cloudStorage.set('language', id)
     setCheckedValue(id)
@@ -47,8 +46,10 @@ export const LanguageModal: React.FC = () => {
 
   useEffect(() => {
     if (user) {
+      setCheckedValue(user.languageCode)
       cloudStorage.get('language')
         .then((value) => {
+          console.log(value);
           setCheckedValue(value)
         })
     }
@@ -58,7 +59,7 @@ export const LanguageModal: React.FC = () => {
     <BottomSheet onDismiss={() => updateIsLanguageModalOpen(false)} open={isLanguageModalOpen}>
       <section {...stylex.props(platform === 'ios' && styles.iosWrapper)}>
         <div {...stylex.props(styles.container)}>
-          <p {...stylex.props(styles.bottomSheetTitle)}>{checkedValue}</p>
+          <p {...stylex.props(styles.bottomSheetTitle)}>{t('languageText')}</p>
           <button {...stylex.props(styles.button(close))} onClick={() => updateIsLanguageModalOpen(false)} />
         </div>
         <div {...stylex.props(styles.listContainer)}>
