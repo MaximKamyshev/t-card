@@ -106,7 +106,7 @@ export const EmployeePage:  React.FC = () => {
         </>
       }
       <div {...stylex.props(styles.shareButtonContainer)}>
-        <ShareButton id={vacancy?.company.id ? vacancy.company.id : ''} text={`Empolyee ${vacancy?.company.name}`} title={`${vacancy?.company.name}`}/>
+        <ShareButton id={vacancy?.company.id ? vacancy.company.id : ''} text={`Empolyee ${vacancy?.company.name}`} />
       </div>
       <Popup isCloseButton={true} modalName='isApplyModalOpen' methodName='updateIsApplyModalOpen' animationData={happBananaLogo} text='Your response has been sent to the employer!' subscription="You will receive the employer's decision in our bot" buttonText='Continue' />
     </main>

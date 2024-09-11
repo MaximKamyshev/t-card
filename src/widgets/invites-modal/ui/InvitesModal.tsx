@@ -14,7 +14,7 @@ export const InvitesModal: React.FC = () => {
   const platform = useInitDataStore((state: any) => state.platform);
 
   const handleInvite = () => {
-    utils.shareURL('https://t.me/mybot/myapp', 'Look! Some cool app here!');
+    utils.shareURL('https://t.me/test1X_bot/Tcard', 'Look! Some cool app here!');
   };
   
   return (
