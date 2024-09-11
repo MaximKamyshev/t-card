@@ -47,7 +47,13 @@ export const LanguageModal: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      setCheckedValue(user.languageCode)
+      cloudStorage.get('language')
+        .then((value) => {
+          setCheckedValue(value)
+        })
+        .catch(() => {
+          setCheckedValue(user.languageCode)
+        })
     }
   }, [user])
   

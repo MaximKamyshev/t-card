@@ -81,10 +81,14 @@ export const AppRouter: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    cloudStorage.get('isClaimed')
-      .then()
+    isLoading && cloudStorage.get('isClaimed')
+      .then((value) => {
+        if (value == 'false') {
+          updateIsPresentModalOpen(true)
+        }
+      })
       .catch(() => {
-        isLoading && updateIsPresentModalOpen(true)
+        updateIsPresentModalOpen(true)
       })
   }, [isLoading])
 
