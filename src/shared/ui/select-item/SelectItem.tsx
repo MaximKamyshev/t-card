@@ -7,7 +7,7 @@ export const SelectItem: React.FC<SelectItemProps> = ({ text, checked, disabled,
 
   return (
     <button onClick={handlePress} disabled={disabled} {...stylex.props(styles.container, disabled && styles.disabledContainer)}>
-      <p {...stylex.props(styles.text, disabled && styles.disabledText)}>{text}</p>
+      <span {...stylex.props(styles.text, disabled && styles.disabledText)}>{text}</span>
       <span {...stylex.props(checked ? styles.circleActive(checkLogo) : styles.circle)} />
     </button>
   )
