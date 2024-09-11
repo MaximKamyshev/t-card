@@ -70,7 +70,7 @@ export const OnboardPage: React.FC = () => {
         <div {...stylex.props(styles.infoContainerCenter)}>
           <p {...stylex.props(styles.text(310))}>{t('firstSectionTitle.text')} <span {...stylex.props(styles.greenText)}>{t('firstSectionTitle.color')}</span></p>
           <div {...stylex.props(styles.flexContainer)}>
-            <button onClick={handleClick} {...stylex.props(styles.buttonFull)}>{t('startButton')}</button>
+            <button onClick={handleClick} {...stylex.props(styles.buttonFull)}>{initData?.startParam}</button>
             <button onClick={handleChooseLanguage} {...stylex.props(styles.languageButton)}>{t('languageButton')}</button>
           </div>
         </div>
