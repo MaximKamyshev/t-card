@@ -31,7 +31,7 @@ export const LanguageModal: React.FC = () => {
       disabled: true
     }
   ]
-  const { t, i18n } = useTranslation('translation', { keyPrefix: 'onboardPage' });
+  const { i18n } = useTranslation('translation', { keyPrefix: 'onboardPage' });
   const user = useInitDataStore((state: any) => state.user);
   const[checkedValue, setCheckedValue] = useState(user.languageCode)
   const [isLanguageModalOpen, updateIsLanguageModalOpen] = useModalStore((state: any) => [state.isLanguageModalOpen, state.updateIsLanguageModalOpen]);
