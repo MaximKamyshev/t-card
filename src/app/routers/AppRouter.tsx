@@ -64,6 +64,7 @@ export const AppRouter: React.FC = () => {
   const [location, reactNavigator] = useIntegration(navigator);
   const cloudStorage = initCloudStorage();
   cloudStorage.set('isClaimed', 'false');
+
   useEffect(() => {
     cloudStorage.get('language')
       .then((value) => {
@@ -81,12 +82,15 @@ export const AppRouter: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    isLoading && cloudStorage.get('isClaimed')
-      .then((value) => {
-        if (value === 'false') {
-          updateIsPresentModalOpen(true)
-        }
-      })
+    if (isLoading) { 
+      updateIsPresentModalOpen(false)
+      cloudStorage.get('isClaimed')
+        .then((value) => {
+          if (value === 'false') {
+            updateIsPresentModalOpen(true)
+          }
+        })
+    }
   }, [isLoading])
 
   useEffect(() => {
